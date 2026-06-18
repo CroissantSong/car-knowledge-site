@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>汽车技术通识 · 六层知识地图</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>汽车技术通识</h1>
+    <p class="subtitle">写给<strong>非汽车专业、即将入职车企的应届生</strong>——从基础到进阶，看懂会议、读懂资料、和工程师对话。</p>
+    <nav class="toc" aria-label="六层导航">
+      <a href="#layer-1">1 整车认知</a>
+      <a href="#layer-2">2 机械基础</a>
+      <a href="#layer-3">3 传统系统</a>
+      <a href="#layer-4">4 新能源</a>
+      <a href="#layer-5">5 智能汽车</a>
+      <a href="#layer-6">6 工作语境</a>
+      <a href="#powerchain">动力链对比</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="layer" id="layer-1">
+      <h2><span class="num">1</span> 整车整体认知</h2>
+      <p class="goal">目标：说清一辆车由哪些大系统组成，以及能量如何从能源传到车轮。</p>
+      <ul>
+        <li>组成：车身 / 底盘 / 动力总成 / 电气电子 / 内外饰</li>
+        <li>能量链：能源 → 转换 → 传递 → 车轮</li>
+        <li>四种架构一眼区分：燃油 / 混动 / 增程 / 纯电</li>
+        <li>术语：平台、白车身(BIW)、三电、域控制器</li>
+      </ul>
+      <p class="meta">前置：无 · 掌握标准：能画出整车系统框图并解释能量流</p>
+    </section>
+
+    <section class="layer" id="layer-2">
+      <h2><span class="num">2</span> 机械基础补课</h2>
+      <p class="goal">目标：补齐理解后续系统所需的物理与机械概念。</p>
+      <ul>
+        <li>力、扭矩、功率、转速的关系</li>
+        <li>齿轮与传动比：为什么要变速 / 减速</li>
+        <li>摩擦、热量、效率：能量在哪损耗</li>
+        <li>峰值功率 vs 持续功率（看参数的关键）</li>
+      </ul>
+      <p class="meta">前置：第 1 层 · 掌握标准：看到参数表能解释每项含义</p>
+    </section>
+
+    <section class="layer" id="layer-3">
+      <h2><span class="num">3</span> 传统汽车系统（燃油车）</h2>
+      <p class="goal">目标：理解从「烧油」到「驱动」的完整链路与底盘系统。</p>
+      <ul>
+        <li>发动机：四冲程、进排气、燃烧</li>
+        <li>变速箱：MT / AT / CVT / DCT</li>
+        <li>传动：离合、传动轴、差速器</li>
+        <li>底盘：悬架、转向、制动；车身与轮胎</li>
+      </ul>
+      <p class="meta">前置：第 2 层 · 掌握标准：能讲清「踩油门到车轮转动」</p>
+    </section>
+
+    <section class="layer" id="layer-4">
+      <h2><span class="num">4</span> 新能源汽车</h2>
+      <p class="goal">目标：理解三电与新能源架构，并能与燃油车对比。</p>
+      <ul>
+        <li>电池 / 电机 / 电控（三电）；BMS、逆变器</li>
+        <li>充电与补能；热管理</li>
+        <li>架构：纯电(BEV) / 混动(HEV·PHEV) / 增程(EREV)</li>
+      </ul>
+      <p class="meta">前置：第 2 层 · 掌握标准：能解释「纯电车为何不需要传统变速箱」</p>
+    </section>
+
+    <section class="layer" id="layer-5">
+      <h2><span class="num">5</span> 智能汽车基础</h2>
+      <p class="goal">目标：理解让车「聪明」的电子电气与软件骨架。</p>
+      <ul>
+        <li>传感器：摄像头 / 毫米波 / 激光雷达 / 超声波</li>
+        <li>ECU 与域控制器；CAN 总线与车载网络</li>
+        <li>线控（转向/制动）；ADAS 与分级；OTA</li>
+      </ul>
+      <p class="meta">前置：第 1 层 · 掌握标准：能解释会议里的「域控」「CAN」</p>
+    </section>
+
+    <section class="layer" id="layer-6">
+      <h2><span class="num">6</span> 车企工作语境</h2>
+      <p class="goal">目标：把技术知识对接到真实岗位与协作语言。</p>
+      <ul>
+        <li>研发 / 试制 / 测试 / 采购 / 制造 / 质量 / 销售 / 售后</li>
+        <li>黑话：三电、热管理、NVH、白车身、域控、SOP、DV/PV</li>
+        <li>不同岗位需要理解到什么程度</li>
+      </ul>
+      <p class="meta">前置：第 1–5 层概览 · 掌握标准：听懂跨部门会议</p>
+    </section>
+
+    <section class="powerchain" id="powerchain">
+      <h2>动力链对比 · 能量 → 车轮</h2>
+      <p class="goal">本站的核心可视化：用同一条链路对比四种架构。</p>
+      <div class="chains">
+        <div class="chain"><span class="src fuel">汽油</span><span class="arrow">→</span><span class="node">发动机</span><span class="arrow">→</span><span class="node">变速箱</span><span class="arrow">→</span><span class="wheel">车轮</span><b>燃油 ICE</b></div>
+        <div class="chain"><span class="src mix">油+电</span><span class="arrow">→</span><span class="node">发动机+电机</span><span class="arrow">→</span><span class="node">耦合</span><span class="arrow">→</span><span class="wheel">车轮</span><b>混动 HEV/PHEV</b></div>
+        <div class="chain"><span class="src fuel">汽油</span><span class="arrow">→</span><span class="node">发动机(只发电)</span><span class="arrow">→</span><span class="node">电机</span><span class="arrow">→</span><span class="wheel">车轮</span><b>增程 EREV</b></div>
+        <div class="chain"><span class="src ev">电池</span><span class="arrow">→</span><span class="node">电机(单速)</span><span class="arrow">→</span><span class="wheel">车轮</span><b>纯电 BEV</b></div>
+      </div>
+      <p class="meta">看点：只有燃油/部分混动需要传统多挡变速箱；增程的发动机不直接驱动车轮。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>汽车技术通识学习网站 · v0.1（知识地图）· 由「汽车网站项目组」小队构建</p>
+  </footer>
+</body>
+</html>

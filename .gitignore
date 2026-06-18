@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# logs / env
+*.log
+.env
+.env.*
+
+# editors
+.idea/
+.vscode/
+
+# python
+__pycache__/
+*.pyc
+
+# node (if a build is added later)
+node_modules/
+dist/
