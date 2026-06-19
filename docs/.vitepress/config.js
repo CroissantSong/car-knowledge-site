@@ -10,6 +10,9 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '汽车技术通识',
   description: '面向非汽车专业应届生的汽车技术学习网站',
+
+  // 开启 KaTeX/MathJax 数学公式渲染（修复 $...$ 乱码）
+  markdown: { math: true },
   
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
