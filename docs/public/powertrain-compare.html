@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动力链对比 — 能量到车轮</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #0f1117; color: #e1e4e8; padding: 24px; min-height: 100vh;
+}
+h1 { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; color: #f0f3f6; }
+.subtitle { text-align: center; font-size: 0.85rem; color: #8b949e; margin-bottom: 20px; }
+
+/* Mode switcher */
+.mode-switcher {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;
+}
+.mode-btn {
+  padding: 8px 20px; border: 1px solid #30363d; border-radius: 8px;
+  background: #161b22; color: #8b949e; cursor: pointer; font-size: 0.9rem;
+  transition: all 0.2s; font-weight: 500;
+}
+.mode-btn:hover { border-color: #58a6ff; color: #c9d1d9; }
+.mode-btn.active { background: #1f6feb; border-color: #58a6ff; color: #fff; }
+
+/* Lane container */
+.lanes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+@media (max-width: 900px) {
+  .lanes { grid-template-columns: 1fr; }
+}
+
+.lane {
+  background: #161b22; border: 1px solid #21262d; border-radius: 12px;
+  padding: 16px; position: relative; overflow: hidden;
+}
+.lane-title {
+  font-size: 1rem; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 8px; border-bottom: 2px solid; display: flex; align-items: center; gap: 8px;
+}
+.lane-title .icon { font-size: 1.3rem; }
+.lane-ice .lane-title { border-color: #f0883e; color: #f0883e; }
+.lane-hev .lane-title { border-color: #f0883e; color: #f0a358; }
+.lane-erev .lane-title { border-color: #58a6ff; color: #58a6ff; }
+.lane-bev .lane-title { border-color: #58a6ff; color: #79c0ff; }
+
+/* Flow diagram */
+.flow { display: flex; flex-direction: column; gap: 10px; position: relative; }
+.node {
+  background: #21262d; border: 1px solid #30363d; border-radius: 8px;
+  padding: 10px 12px; cursor: pointer; transition: all 0.2s; position: relative;
+  font-size: 0.82rem; text-align: center;
+}
+.node:hover { background: #30363d; border-color: #58a6ff; transform: translateY(-1px); }
+.node.active-highlight { border-color: #58a6ff; box-shadow: 0 0 8px rgba(88,166,255,0.3); }
+
+/* Arrow between nodes */
+.arrow {
+  text-align: center; font-size: 0.9rem; position: relative; height: 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.arrow-inner {
+  width: 3px; height: 100%; border-radius: 2px; position: relative;
+}
+.arrow-inner.energy-fuel { background: linear-gradient(to bottom, #f0883e, #f0883e80); }
+.arrow-inner.energy-elec { background: linear-gradient(to bottom, #58a6ff, #58a6ff80); }
+.arrow-inner.energy-mech { background: linear-gradient(to bottom, #6e7681, #6e768180); }
+.arrow-inner.energy-regen { background: repeating-linear-gradient(to bottom, #3fb950 0px, #3fb950 4px, transparent 4px, transparent 8px); }
+.arrow-inner.energy-heat { background: linear-gradient(to bottom, #da3633, #da363380); }
+.arrow-label {
+  font-size: 0.65rem; color: #8b949e; position: absolute; right: -55px; white-space: nowrap;
+}
+
+/* Animated flow dot */
+@keyframes flowDown { 0% { top: 0; opacity: 1; } 100% { top: 100%; opacity: 0; } }
+.flow-dot {
+  position: absolute; width: 6px; height: 6px; border-radius: 50%; left: -1.5px;
+  animation: flowDown 1.2s linear infinite;
+}
+.flow-dot.fuel { background: #f0883e; box-shadow: 0 0 4px #f0883e; }
+.flow-dot.elec { background: #58a6ff; box-shadow: 0 0 4px #58a6ff; }
+.flow-dot.mech { background: #8b949e; box-shadow: 0 0 4px #8b949e; }
+.flow-dot.regen { background: #3fb950; box-shadow: 0 0 4px #3fb950; animation-direction: reverse; }
+
+/* Tooltip */
+.tooltip {
+  display: none; position: absolute; z-index: 100; background: #1c2128;
+  border: 1px solid #30363d; border-radius: 8px; padding: 10px 14px;
+  font-size: 0.78rem; max-width: 260px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  pointer-events: none; line-height: 1.5;
+}
+.tooltip.show { display: block; }
+.tooltip .term { color: #58a6ff; font-weight: 600; }
+.tooltip .desc { color: #c9d1d9; margin-top: 4px; }
+
+/* Conclusion badge */
+.conclusion {
+  margin-top: 12px; padding: 10px 12px; border-radius: 8px; font-size: 0.78rem; line-height: 1.5;
+}
+.conclusion-ice { background: #f0883e15; border: 1px solid #f0883e30; color: #f0883e; }
+.conclusion-hev { background: #f0a35815; border: 1px solid #f0a35830; color: #f0a358; }
+.conclusion-erev { background: #58a6ff15; border: 1px solid #58a6ff30; color: #58a6ff; }
+.conclusion-bev { background: #79c0ff15; border: 1px solid #79c0ff30; color: #79c0ff; }
+
+/* Legend */
+.legend {
+  display: flex; justify-content: center; gap: 18px; margin-top: 20px;
+  flex-wrap: wrap; font-size: 0.75rem;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; color: #8b949e; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-dash { width: 16px; height: 0; border-top: 2px dashed #3fb950; flex-shrink: 0; }
+
+/* Dimmed state for brake mode */
+.lane.dimmed .node { opacity: 0.4; }
+.lane.dimmed .node.active-highlight { opacity: 1; }
+</style>
+</head>
+<body>
+
+<h1>🔋 能量 → 车轮 动力链对比</h1>
+<p class="subtitle">燃油 · 混动 · 增程 · 纯电 — 四种技术路径的「能量怎么到车轮」</p>
+
+<div class="mode-switcher">
+  <button class="mode-btn active" data-mode="drive">🚀 驱动模式</button>
+  <button class="mode-btn" data-mode="cruise">🛣️ 巡航模式</button>
+  <button class="mode-btn" data-mode="brake">🔄 制动回收</button>
+</div>
+
+<div class="lanes" id="lanes"></div>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-dot" style="background:#f0883e"></span> 燃油能</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span> 电能</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#6e7681"></span> 机械能</span>
+  <span class="legend-item"><span class="legend-dash"></span> 回收路径</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#da3633"></span> 热损失</span>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ── DATA ──
+const lanesData = [
+  {
+    id: 'ice', icon: '⛽', title: '燃油车 ICE',
+    conclusionClass: 'conclusion-ice',
+    conclusion: '能量路径最长：化学能→热能→机械能，每步都损失。热效率 ≈ 30–40%。',
+    nodes: [
+      { id:'ice-1', label:'燃油箱', term:'油箱 (Fuel Tank)', desc:'储存汽油/柴油。能量密度极高（~12 kWh/kg），远高于电池。' },
+      { id:'ice-2', label:'燃油泵 → 喷油嘴', term:'燃油供给系统', desc:'将燃油从油箱加压输送到喷油嘴，雾化后喷入气缸。高压直喷可达 350 bar。' },
+      { id:'ice-3', label:'内燃机', term:'内燃机 (ICE)', desc:'燃料燃烧 → 热能 → 活塞往复 → 曲轴旋转。四冲程循环：进气→压缩→做功→排气。热效率约 30–40%。' },
+      { id:'ice-4', label:'飞轮 → 离合器', term:'离合器 (Clutch)', desc:'连接/断开发动机与变速箱。起步时半联动平顺接合。' },
+      { id:'ice-5', label:'变速箱', term:'变速箱 (Transmission)', desc:'调整传动比匹配车速和发动机转速。MT/AT/DCT/CVT 四种主流类型。' },
+      { id:'ice-6', label:'差速器 → 半轴', term:'差速器 (Differential)', desc:'允许左右轮以不同转速旋转（转弯必备）。将动力分配给两侧车轮。' },
+      { id:'ice-7', label:'车轮 🚗', term:'驱动轮', desc:'最终执行端。发动机的动力经过层层传递到达这里。' }
+    ],
+    arrows: [
+      { from:0, to:1, type:'fuel', label:'燃油' },
+      { from:1, to:2, type:'fuel', label:'雾化燃油' },
+      { from:2, to:3, type:'mech', label:'旋转力矩' },
+      { from:3, to:4, type:'mech', label:'' },
+      { from:4, to:5, type:'mech', label:'' },
+      { from:5, to:6, type:'mech', label:'' }
+    ]
+  },
+  {
+    id: 'hev', icon: '⚡⛽', title: '混动 HEV/PHEV',
+    conclusionClass: 'conclusion-hev',
+    conclusion: '两套动力协同：低速用电、高速用油、制动回收。电池双向（放电+充电）。综合油耗比纯油低 30–50%。',
+    nodes: [
+      { id:'hev-1', label:'燃油箱', term:'油箱', desc:'混动车仍需油箱，但容量通常比同级燃油车小。' },
+      { id:'hev-2', label:'内燃机', term:'内燃机', desc:'混动发动机多采用阿特金森循环，牺牲峰值功率换取更高热效率（~41%）。' },
+      { id:'hev-3', label:'动力电池', term:'动力电池', desc:'HEV 电池 ~1–2 kWh，PHEV ~10–40 kWh。双向工作：可放电驱动，可充电回收。' },
+      { id:'hev-4', label:'电机/发电机', term:'电机 (MG1/MG2)', desc:'可作电动机驱动车轮，也可作发电机回收能量。丰田THS用双电机+行星齿轮实现功率分流。' },
+      { id:'hev-5', label:'功率分流装置', term:'行星齿轮组 (Power Split Device)', desc:'混联核心。发动机动力一部分直驱车轮，一部分发电；电机动力也可驱动车轮。三者转速精密耦合。' },
+      { id:'hev-6', label:'差速器 → 半轴', term:'差速器', desc:'将动力分配给左右车轮。' },
+      { id:'hev-7', label:'车轮 🚗', term:'驱动轮', desc:'内燃机和/或电机输出的动力最终到达车轮。低速纯电安静，高速油电协同。' }
+    ],
+    arrows: [
+      { from:0, to:1, type:'fuel', label:'' },
+      { from:1, to:4, type:'mech', label:'直驱/发电' },
+      { from:2, to:3, type:'elec', label:'供电' },
+      { from:3, to:4, type:'elec', label:'驱动' },
+      { from:3, to:2, type:'regen', label:'回收' },
+      { from:4, to:5, type:'mech', label:'' },
+      { from:5, to:6, type:'mech', label:'' }
+    ]
+  },
+  {
+    id: 'erev', icon: '🔌⛽', title: '增程 EREV',
+    conclusionClass: 'conclusion-erev',
+    conclusion: '发动机不驱动车轮，仅作「发电机」。日常通勤 = 纯电；长途 = 加油发电。⚠ 发动机与车轮无机械直连。',
+    nodes: [
+      { id:'erev-1', label:'燃油箱', term:'油箱', desc:'增程车油箱通常 40–60L，用于长途发电，不参与直接驱动。' },
+      { id:'erev-2', label:'发动机（增程器）', term:'增程器 (Range Extender)', desc:'⚠ 仅驱动发电机！与车轮无任何机械连接。始终工作在最佳热效率区间。' },
+      { id:'erev-3', label:'发电机', term:'发电机 (Generator)', desc:'将发动机的机械能转化为电能，为电池充电或直接供电给电机。' },
+      { id:'erev-4', label:'动力电池', term:'动力电池', desc:'大容量（~40 kWh），日常纯电行驶。双向：放电驱动 + 充电回收。' },
+      { id:'erev-5', label:'驱动电机', term:'驱动电机', desc:'唯一的动力输出端！所有行驶动力都来自电机。低速大扭矩，安静平顺。' },
+      { id:'erev-6', label:'单级减速器 → 差速器', term:'减速器/差速器', desc:'将电机高转速降低到车轮需要的转速。单级固定速比（~9:1），无多挡变速箱。' },
+      { id:'erev-7', label:'车轮 🚗', term:'驱动轮', desc:'只由电机驱动。纯电体验 + 无里程焦虑。' }
+    ],
+    arrows: [
+      { from:0, to:1, type:'fuel', label:'' },
+      { from:1, to:2, type:'mech', label:'驱动发电机' },
+      { from:2, to:3, type:'elec', label:'充电' },
+      { from:2, to:4, type:'elec', label:'直供' },
+      { from:3, to:4, type:'elec', label:'供电' },
+      { from:4, to:5, type:'mech', label:'旋转力矩' },
+      { from:5, to:6, type:'mech', label:'' }
+    ]
+  },
+  {
+    id: 'bev', icon: '🔋', title: '纯电 BEV',
+    conclusionClass: 'conclusion-bev',
+    conclusion: '最简洁的路径：电池→电机→车轮，无燃烧、无怠速。效率 85–90%。电机宽转速高效，仅需单级减速。',
+    nodes: [
+      { id:'bev-1', label:'充电接口', term:'充电接口', desc:'交流慢充 (7kW) 或直流快充 (60–480kW)。800V 高压平台可 15 分钟充至 80%。' },
+      { id:'bev-2', label:'动力电池', term:'动力电池包', desc:'三元锂或磷酸铁锂，容量 50–100 kWh。双向：放电驱动 + 制动回收充电。' },
+      { id:'bev-3', label:'电机控制器 MCU', term:'电机控制器 (MCU)', desc:'将电池直流电 (DC) 逆变为驱动电机的交流电 (AC)。SiC 功率器件降低损耗。' },
+      { id:'bev-4', label:'驱动电机', term:'永磁同步电机', desc:'0 转速即可输出峰值扭矩（这也是电动车起步快的原因）。最高转速 15000–20000 rpm。' },
+      { id:'bev-5', label:'单级减速器 → 差速器', term:'单级减速器', desc:'电机宽转速高效（0–15000+ rpm），仅需固定速比单级减速，无需多挡变速箱。' },
+      { id:'bev-6', label:'车轮 🚗', term:'驱动轮', desc:'无发动机、无变速箱、无排气管。机械结构极简。' }
+    ],
+    arrows: [
+      { from:0, to:1, type:'elec', label:'充电' },
+      { from:1, to:2, type:'elec', label:'DC输出' },
+      { from:2, to:3, type:'elec', label:'AC驱动' },
+      { from:3, to:4, type:'mech', label:'旋转力矩' },
+      { from:4, to:5, type:'mech', label:'' }
+    ]
+  }
+];
+
+let currentMode = 'drive';
+
+// ── RENDER ──
+function renderLanes(mode) {
+  const container = document.getElementById('lanes');
+  container.innerHTML = '';
+
+  lanesData.forEach(lane => {
+    const laneDiv = document.createElement('div');
+    laneDiv.className = `lane lane-${lane.id}`;
+
+    let html = `<div class="lane-title"><span class="icon">${lane.icon}</span>${lane.title}</div>`;
+    html += '<div class="flow">';
+
+    lane.nodes.forEach((node, i) => {
+      html += `<div class="node" data-lane="${lane.id}" data-node="${i}" data-term="${node.term.replace(/"/g,'&quot;')}" data-desc="${node.desc.replace(/"/g,'&quot;')}">${node.label}</div>`;
+      if (i < lane.nodes.length - 1) {
+        const arrow = lane.arrows.find(a => a.from === i && a.to === i + 1);
+        if (arrow) {
+          let arrowClass = `energy-${arrow.type}`;
+          html += `<div class="arrow"><div class="arrow-inner ${arrowClass}"><div class="flow-dot ${arrow.type}"></div></div>${arrow.label ? `<span class="arrow-label">${arrow.label}</span>` : ''}</div>`;
+        } else {
+          html += '<div class="arrow"></div>';
+        }
+      }
+    });
+
+    html += '</div>';
+    html += `<div class="conclusion ${lane.conclusionClass}">${lane.conclusion}</div>`;
+    laneDiv.innerHTML = html;
+    container.appendChild(laneDiv);
+  });
+
+  // Apply mode-specific styling
+  if (mode === 'brake') {
+    // Dim ICE lane except heat
+    document.querySelector('.lane-ice').classList.add('dimmed');
+  }
+
+  // Attach hover handlers
+  document.querySelectorAll('.node').forEach(nodeEl => {
+    nodeEl.addEventListener('mouseenter', showTooltip);
+    nodeEl.addEventListener('mouseleave', hideTooltip);
+  });
+}
+
+// ── TOOLTIP ──
+const tooltip = document.getElementById('tooltip');
+function showTooltip(e) {
+  const el = e.currentTarget;
+  const term = el.dataset.term;
+  const desc = el.dataset.desc;
+  tooltip.innerHTML = `<div class="term">${term}</div><div class="desc">${desc}</div>`;
+  tooltip.classList.add('show');
+  el.classList.add('active-highlight');
+  positionTooltip(e);
+}
+function hideTooltip(e) {
+  tooltip.classList.remove('show');
+  e.currentTarget.classList.remove('active-highlight');
+}
+function positionTooltip(e) {
+  const rect = tooltip.getBoundingClientRect();
+  let x = e.clientX + 16;
+  let y = e.clientY - rect.height / 2;
+  if (x + rect.width > window.innerWidth) x = e.clientX - rect.width - 16;
+  if (y < 0) y = 8;
+  if (y + rect.height > window.innerHeight) y = window.innerHeight - rect.height - 8;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top = y + 'px';
+}
+
+// ── MODE SWITCH ──
+document.querySelectorAll('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentMode = btn.dataset.mode;
+    renderLanes(currentMode);
+  });
+});
+
+// Initial render
+renderLanes('drive');
+</script>
+</body>
+</html>

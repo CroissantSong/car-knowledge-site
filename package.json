@@ -1,0 +1,14 @@
+{
+  "name": "auto-tech-docs",
+  "version": "1.0.0",
+  "description": "汽车技术通识学习网站 - 面向非汽车专业应届生的汽车知识体系",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  }
+}
