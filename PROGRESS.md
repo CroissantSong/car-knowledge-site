@@ -76,3 +76,12 @@
 - SON-24 动力链图交副手按 SON-20 规范核验；SON-26/27 改为"补深现有内容"。
 - SON-22(Opus 验收) 待 Opus 限额(3:10pm Sydney)重置后触发。
 - 本地预览：`npm run preview`；部署：dist 推 GitHub Pages 即可。
+
+---
+
+## 里程碑 — 2026-06-18 · MVP 通过 QA 验收 ✅
+
+- SON-22(Opus 终验)报告：构建通过、公式(MathJax)/图表(Mermaid)/交互页正常、六层 54 点 + 3 篇笔记无技术硬伤，建议验收。P1 导航死链已修复推送(c06d9aa)。
+- 标记 done：SON-22 / SON-25 / SON-26 / SON-27。
+- 低优先级 P2(交互页模式无差异)、P3(GB/T 3730.1 版本号)并入 SON-29(副手 UI 收尾)。
+- 进行中：SON-29 UI 优化(副手已从限额恢复，已 rerun)、SON-24 交互图打磨。
