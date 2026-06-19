@@ -66,3 +66,13 @@
 
 **下一步**：迭代 4 → 取回并验证 VitePress 站点（`npm install && npm run build`）；通过则迁移知识地图+3 篇笔记进去，落地 SON-19；并据 SON-20 规范实现动力链交互图。
 
+
+---
+
+## 里程碑 — 2026-06-18 · 第一版 MVP 构建通过 ✅
+
+- 工兵在共享仓库提交 286f1ca：VitePress 站点(docs/) + 六层内容 + 3 篇核心笔记(core-notes/) + 动力链交互页(public/powertrain-compare.html)。
+- 队长验证：`npm install` + `npm run build` 通过，dist 全量生成。SON-19 → done。
+- SON-24 动力链图交副手按 SON-20 规范核验；SON-26/27 改为"补深现有内容"。
+- SON-22(Opus 验收) 待 Opus 限额(3:10pm Sydney)重置后触发。
+- 本地预览：`npm run preview`；部署：dist 推 GitHub Pages 即可。
