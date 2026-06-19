@@ -1,0 +1,51 @@
+.vp-mermaid {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow-x: auto;
+  background: var(--vp-c-bg-soft);
+  text-align: center;
+}
+
+.vp-mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.auto-diagram {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.auto-diagram text {
+  fill: var(--vp-c-text-1);
+  font-size: 16px;
+}
+
+.auto-diagram-axis {
+  fill: none;
+  stroke: var(--vp-c-text-2);
+  stroke-width: 3;
+}
+
+.auto-diagram-emphasis {
+  fill: none;
+  stroke: var(--vp-c-brand-1);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.auto-diagram-node {
+  fill: var(--vp-c-bg);
+  stroke: var(--vp-c-divider);
+  stroke-width: 2;
+}

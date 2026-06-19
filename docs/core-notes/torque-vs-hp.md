@@ -48,15 +48,29 @@ $$
 
 这就是为什么发动机有「扭矩曲线」和「功率曲线」两条线：
 
-```
-扭矩 ↑                    功率 ↑
-     │    ╭──╮                 │      ╱────╲
-     │   ╱    ╲___             │    ╱        ╲___
-     │  ╱                             │  ╱
-     │ ╱                              │ ╱
-     │╱                               │╱
-     └──────────→ RPM        └──────────→ RPM
-```
+<svg class="auto-diagram" viewBox="0 0 760 280" role="img" aria-label="扭矩曲线与功率曲线随发动机转速变化">
+  <defs>
+    <marker id="curve-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g transform="translate(40 26)">
+    <text x="125" y="0" text-anchor="middle">扭矩曲线</text>
+    <path class="auto-diagram-axis" d="M20 210 L20 28" marker-end="url(#curve-arrow)" />
+    <path class="auto-diagram-axis" d="M20 210 L300 210" marker-end="url(#curve-arrow)" />
+    <text x="8" y="32" text-anchor="end">扭矩</text>
+    <text x="302" y="230" text-anchor="end">RPM</text>
+    <path class="auto-diagram-emphasis" d="M20 200 C60 126, 94 74, 136 70 C174 66, 200 96, 224 112 C246 126, 270 128, 300 128" />
+  </g>
+  <g transform="translate(410 26)">
+    <text x="125" y="0" text-anchor="middle">功率曲线</text>
+    <path class="auto-diagram-axis" d="M20 210 L20 28" marker-end="url(#curve-arrow)" />
+    <path class="auto-diagram-axis" d="M20 210 L300 210" marker-end="url(#curve-arrow)" />
+    <text x="8" y="32" text-anchor="end">功率</text>
+    <text x="302" y="230" text-anchor="end">RPM</text>
+    <path class="auto-diagram-emphasis" d="M20 204 C78 166, 126 108, 172 78 C212 52, 252 68, 300 112" />
+  </g>
+</svg>
 
 ## 实际驾驶中的感受
 
@@ -72,10 +86,10 @@ $$
 
 电机从 0 转速开始就能输出**峰值扭矩**，不需要像内燃机那样等待转速爬升。
 
-```
-内燃机：扭矩随转速逐渐上升 → 起步慢
-电机：  0rpm 就输出最大扭矩 → 起步快
-```
+| 动力源 | 起步扭矩特性 | 驾驶感受 |
+|--------|--------------|----------|
+| 内燃机 | 扭矩随转速逐渐上升 | 起步需要等待转速和增压建立 |
+| 电机 | 0 rpm 即可输出高扭矩 | 起步响应快、推背感直接 |
 
 这就是为什么特斯拉、比亚迪汉等电动车起步极快——电机物理特性使然。
 

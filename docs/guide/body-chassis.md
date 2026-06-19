@@ -66,7 +66,15 @@
 
 将发动机动力传递到驱动轮。
 
-发动机 → 离合器 → 变速箱 → 传动轴 → 差速器 → 半轴 → 车轮
+```mermaid
+flowchart LR
+    ENGINE["发动机"] --> CLUTCH["离合器"]
+    CLUTCH --> TRANS["变速箱"]
+    TRANS --> SHAFT["传动轴"]
+    SHAFT --> DIFF["差速器"]
+    DIFF --> AXLE["半轴"]
+    AXLE --> WHEEL["车轮"]
+```
 
 ### 行驶系统
 

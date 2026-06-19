@@ -25,6 +25,6 @@
 
 ## 四种动力链对比
 
-<iframe src="/powertrain-compare.html" width="100%" height="820" style="border:1px solid #30363d;border-radius:8px;margin:16px 0;" title="动力链交互对比图"></iframe>
+<iframe src="../powertrain-compare.html" width="100%" height="820" style="border:1px solid #30363d;border-radius:8px;margin:16px 0;" title="动力链交互对比图"></iframe>
 
-> 交互式对比：鼠标悬停节点查看术语，切换模式观察能量流。也可[独立打开](/powertrain-compare.html)。
+> 交互式对比：鼠标悬停节点查看术语，切换模式观察能量流。也可[独立打开](../powertrain-compare.html)。

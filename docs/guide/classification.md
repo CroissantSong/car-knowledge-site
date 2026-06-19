@@ -33,9 +33,9 @@
 
 ## 动力链对比：四种技术路径
 
-<iframe src="/powertrain-compare.html" width="100%" height="820" style="border:1px solid #30363d;border-radius:8px;margin:16px 0;" title="动力链交互对比图"></iframe>
+<iframe src="../powertrain-compare.html" width="100%" height="820" style="border:1px solid #30363d;border-radius:8px;margin:16px 0;" title="动力链交互对比图"></iframe>
 
-> 上方为交互式动力链对比图。鼠标悬停各节点可查看中文术语解释。切换「驱动/巡航/制动回收」模式观察能量流变化。也可[独立打开](/powertrain-compare.html)查看。
+> 上方为交互式动力链对比图。鼠标悬停各节点可查看中文术语解释。切换「驱动/巡航/制动回收」模式观察能量流变化。也可[独立打开](../powertrain-compare.html)查看。
 
 ## 车辆识别代号 VIN
 
