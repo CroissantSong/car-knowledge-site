@@ -61,7 +61,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '知识地图', link: '/#六层知识地图' },
       { text: '核心笔记', link: '/core-notes/' },
-      { text: '关于', link: '/about' }
+      { text: '关于', link: '/#关于本站' }
     ],
 
     // 侧边栏
