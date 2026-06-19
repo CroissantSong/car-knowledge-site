@@ -5,116 +5,330 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>动力链对比 — 能量到车轮</title>
 <style>
+:root {
+  --bg: #f7faf9;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --text: #172033;
+  --muted: #5b6878;
+  --border: rgba(23, 32, 51, 0.13);
+  --teal: #0f766e;
+  --blue: #2563eb;
+  --fuel: #d97706;
+  --elec: #2563eb;
+  --mech: #64748b;
+  --regen: #15803d;
+  --heat: #dc2626;
+  --shadow: 0 18px 46px rgba(15, 23, 42, 0.11);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --surface: rgba(18, 26, 39, 0.92);
+    --surface-strong: #151e2c;
+    --text: #eef5ff;
+    --muted: #aab6c7;
+    --border: rgba(226, 232, 240, 0.16);
+    --teal: #5eead4;
+    --blue: #93c5fd;
+    --fuel: #fbbf24;
+    --elec: #60a5fa;
+    --mech: #94a3b8;
+    --regen: #86efac;
+    --heat: #f87171;
+    --shadow: 0 20px 54px rgba(0, 0, 0, 0.36);
+  }
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
+  min-height: 100vh;
+  padding: 24px;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 16%, rgba(217, 119, 6, 0.12), transparent 26%),
+    linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 88%, #0f766e 12%));
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: #0f1117; color: #e1e4e8; padding: 24px; min-height: 100vh;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
-h1 { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; color: #f0f3f6; }
-.subtitle { text-align: center; font-size: 0.85rem; color: #8b949e; margin-bottom: 20px; }
 
-/* Mode switcher */
+h1 {
+  color: var(--text);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 850;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.subtitle {
+  max-width: 760px;
+  margin: 8px auto 22px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
 .mode-switcher {
-  display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
 }
-.mode-btn {
-  padding: 8px 20px; border: 1px solid #30363d; border-radius: 8px;
-  background: #161b22; color: #8b949e; cursor: pointer; font-size: 0.9rem;
-  transition: all 0.2s; font-weight: 500;
-}
-.mode-btn:hover { border-color: #58a6ff; color: #c9d1d9; }
-.mode-btn.active { background: #1f6feb; border-color: #58a6ff; color: #fff; }
 
-/* Lane container */
-.lanes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-@media (max-width: 900px) {
-  .lanes { grid-template-columns: 1fr; }
+.mode-btn {
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 720;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.mode-btn:hover {
+  border-color: var(--teal);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.mode-btn.active {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.18);
+}
+
+.lanes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .lane {
-  background: #161b22; border: 1px solid #21262d; border-radius: 12px;
-  padding: 16px; position: relative; overflow: hidden;
+  position: relative;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
+
+.lane::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  border-radius: 8px 8px 0 0;
+  background: var(--teal);
+}
+
+.lane-ice::before,
+.lane-hev::before { background: var(--fuel); }
+.lane-erev::before,
+.lane-bev::before { background: var(--elec); }
+
 .lane-title {
-  font-size: 1rem; font-weight: 700; margin-bottom: 12px;
-  padding-bottom: 8px; border-bottom: 2px solid; display: flex; align-items: center; gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.25;
 }
-.lane-title .icon { font-size: 1.3rem; }
-.lane-ice .lane-title { border-color: #f0883e; color: #f0883e; }
-.lane-hev .lane-title { border-color: #f0883e; color: #f0a358; }
-.lane-erev .lane-title { border-color: #58a6ff; color: #58a6ff; }
-.lane-bev .lane-title { border-color: #58a6ff; color: #79c0ff; }
 
-/* Flow diagram */
-.flow { display: flex; flex-direction: column; gap: 10px; position: relative; }
+.lane-title .icon { font-size: 1.2rem; }
+.lane-ice .lane-title { color: var(--fuel); }
+.lane-hev .lane-title { color: color-mix(in srgb, var(--fuel) 70%, var(--text)); }
+.lane-erev .lane-title { color: var(--blue); }
+.lane-bev .lane-title { color: color-mix(in srgb, var(--blue) 78%, var(--text)); }
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  position: relative;
+}
+
 .node {
-  background: #21262d; border: 1px solid #30363d; border-radius: 8px;
-  padding: 10px 12px; cursor: pointer; transition: all 0.2s; position: relative;
-  font-size: 0.82rem; text-align: center;
+  position: relative;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 680;
+  line-height: 1.4;
+  text-align: center;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
-.node:hover { background: #30363d; border-color: #58a6ff; transform: translateY(-1px); }
-.node.active-highlight { border-color: #58a6ff; box-shadow: 0 0 8px rgba(88,166,255,0.3); }
 
-/* Arrow between nodes */
+.node:hover,
+.node.active-highlight {
+  border-color: var(--teal);
+  background: color-mix(in srgb, var(--surface-strong) 84%, var(--teal) 16%);
+  box-shadow: 0 8px 22px rgba(15, 118, 110, 0.13);
+  transform: translateY(-1px);
+}
+
 .arrow {
-  text-align: center; font-size: 0.9rem; position: relative; height: 20px;
-  display: flex; align-items: center; justify-content: center;
-}
-.arrow-inner {
-  width: 3px; height: 100%; border-radius: 2px; position: relative;
-}
-.arrow-inner.energy-fuel { background: linear-gradient(to bottom, #f0883e, #f0883e80); }
-.arrow-inner.energy-elec { background: linear-gradient(to bottom, #58a6ff, #58a6ff80); }
-.arrow-inner.energy-mech { background: linear-gradient(to bottom, #6e7681, #6e768180); }
-.arrow-inner.energy-regen { background: repeating-linear-gradient(to bottom, #3fb950 0px, #3fb950 4px, transparent 4px, transparent 8px); }
-.arrow-inner.energy-heat { background: linear-gradient(to bottom, #da3633, #da363380); }
-.arrow-label {
-  font-size: 0.65rem; color: #8b949e; position: absolute; right: -55px; white-space: nowrap;
+  position: relative;
+  display: flex;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
 }
 
-/* Animated flow dot */
+.arrow-inner {
+  width: 4px;
+  height: 100%;
+  border-radius: 999px;
+  position: relative;
+}
+
+.arrow-inner.energy-fuel { background: linear-gradient(to bottom, var(--fuel), color-mix(in srgb, var(--fuel) 40%, transparent)); }
+.arrow-inner.energy-elec { background: linear-gradient(to bottom, var(--elec), color-mix(in srgb, var(--elec) 40%, transparent)); }
+.arrow-inner.energy-mech { background: linear-gradient(to bottom, var(--mech), color-mix(in srgb, var(--mech) 40%, transparent)); }
+.arrow-inner.energy-regen { background: repeating-linear-gradient(to bottom, var(--regen) 0px, var(--regen) 4px, transparent 4px, transparent 8px); }
+.arrow-inner.energy-heat { background: linear-gradient(to bottom, var(--heat), color-mix(in srgb, var(--heat) 40%, transparent)); }
+
+.arrow-label {
+  position: absolute;
+  left: calc(50% + 12px);
+  max-width: 78px;
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.2;
+  white-space: normal;
+}
+
 @keyframes flowDown { 0% { top: 0; opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
 .flow-dot {
-  position: absolute; width: 6px; height: 6px; border-radius: 50%; left: -1.5px;
+  position: absolute;
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   animation: flowDown 1.2s linear infinite;
 }
-.flow-dot.fuel { background: #f0883e; box-shadow: 0 0 4px #f0883e; }
-.flow-dot.elec { background: #58a6ff; box-shadow: 0 0 4px #58a6ff; }
-.flow-dot.mech { background: #8b949e; box-shadow: 0 0 4px #8b949e; }
-.flow-dot.regen { background: #3fb950; box-shadow: 0 0 4px #3fb950; animation-direction: reverse; }
 
-/* Tooltip */
+.flow-dot.fuel { background: var(--fuel); box-shadow: 0 0 8px var(--fuel); }
+.flow-dot.elec { background: var(--elec); box-shadow: 0 0 8px var(--elec); }
+.flow-dot.mech { background: var(--mech); box-shadow: 0 0 8px var(--mech); }
+.flow-dot.regen { background: var(--regen); box-shadow: 0 0 8px var(--regen); animation-direction: reverse; }
+
 .tooltip {
-  display: none; position: absolute; z-index: 100; background: #1c2128;
-  border: 1px solid #30363d; border-radius: 8px; padding: 10px 14px;
-  font-size: 0.78rem; max-width: 260px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  pointer-events: none; line-height: 1.5;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  max-width: min(320px, calc(100vw - 28px));
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
+
 .tooltip.show { display: block; }
-.tooltip .term { color: #58a6ff; font-weight: 600; }
-.tooltip .desc { color: #c9d1d9; margin-top: 4px; }
+.tooltip .term { color: var(--teal); font-weight: 800; }
+.tooltip .desc { color: var(--text); margin-top: 4px; }
 
-/* Conclusion badge */
 .conclusion {
-  margin-top: 12px; padding: 10px 12px; border-radius: 8px; font-size: 0.78rem; line-height: 1.5;
+  margin-top: 14px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  line-height: 1.62;
 }
-.conclusion-ice { background: #f0883e15; border: 1px solid #f0883e30; color: #f0883e; }
-.conclusion-hev { background: #f0a35815; border: 1px solid #f0a35830; color: #f0a358; }
-.conclusion-erev { background: #58a6ff15; border: 1px solid #58a6ff30; color: #58a6ff; }
-.conclusion-bev { background: #79c0ff15; border: 1px solid #79c0ff30; color: #79c0ff; }
 
-/* Legend */
+.conclusion-ice { background: color-mix(in srgb, var(--fuel) 10%, transparent); color: color-mix(in srgb, var(--fuel) 82%, var(--text)); }
+.conclusion-hev { background: color-mix(in srgb, var(--fuel) 9%, transparent); color: color-mix(in srgb, var(--fuel) 76%, var(--text)); }
+.conclusion-erev { background: color-mix(in srgb, var(--elec) 10%, transparent); color: color-mix(in srgb, var(--elec) 82%, var(--text)); }
+.conclusion-bev { background: color-mix(in srgb, var(--elec) 9%, transparent); color: color-mix(in srgb, var(--elec) 76%, var(--text)); }
+
 .legend {
-  display: flex; justify-content: center; gap: 18px; margin-top: 20px;
-  flex-wrap: wrap; font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1180px;
+  margin: 20px auto 0;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
-.legend-item { display: flex; align-items: center; gap: 6px; color: #8b949e; }
-.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-.legend-dash { width: 16px; height: 0; border-top: 2px dashed #3fb950; flex-shrink: 0; }
 
-/* Dimmed state for brake mode */
-.lane.dimmed .node { opacity: 0.4; }
-.lane.dimmed .node.active-highlight { opacity: 1; }
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dash {
+  width: 18px;
+  height: 0;
+  border-top: 2px dashed var(--regen);
+  flex-shrink: 0;
+}
+
+.lane.dimmed .node,
+.lane.dimmed .arrow,
+.lane.dimmed .conclusion {
+  opacity: 0.46;
+}
+
+.lane.dimmed .node.active-highlight {
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .lanes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 18px 14px;
+  }
+
+  .lanes {
+    grid-template-columns: 1fr;
+  }
+
+  .mode-btn {
+    flex: 1 1 160px;
+  }
+}
 </style>
 </head>
 <body>
@@ -123,9 +337,9 @@ h1 { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px
 <p class="subtitle">燃油 · 混动 · 增程 · 纯电 — 四种技术路径的「能量怎么到车轮」</p>
 
 <div class="mode-switcher">
-  <button class="mode-btn active" data-mode="drive">🚀 驱动模式</button>
-  <button class="mode-btn" data-mode="cruise">🛣️ 巡航模式</button>
-  <button class="mode-btn" data-mode="brake">🔄 制动回收</button>
+  <button class="mode-btn active" data-mode="drive" aria-pressed="true">🚀 驱动模式</button>
+  <button class="mode-btn" data-mode="cruise" aria-pressed="false">🛣️ 巡航模式</button>
+  <button class="mode-btn" data-mode="brake" aria-pressed="false">🔄 制动回收</button>
 </div>
 
 <div class="lanes" id="lanes"></div>
@@ -308,8 +522,12 @@ function positionTooltip(e) {
 // ── MODE SWITCH ──
 document.querySelectorAll('.mode-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.mode-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
     currentMode = btn.dataset.mode;
     renderLanes(currentMode);
   });

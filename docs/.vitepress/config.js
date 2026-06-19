@@ -22,7 +22,12 @@ export default defineConfig({
         const info = token.info.trim().split(/\s+/)[0]
 
         if (info === 'mermaid') {
-          return `<pre class="vp-mermaid mermaid">${md.utils.escapeHtml(token.content)}</pre>`
+          return [
+            '<figure class="diagram-frame diagram-frame-mermaid">',
+            '<figcaption class="diagram-caption">结构图</figcaption>',
+            `<pre class="vp-mermaid mermaid">${md.utils.escapeHtml(token.content)}</pre>`,
+            '</figure>'
+          ].join('')
         }
 
         return defaultFence
@@ -37,6 +42,8 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    logo: '/favicon.svg',
+
     // 搜索（本地，无需外部服务）
     search: {
       provider: 'local',
@@ -59,7 +66,8 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: '首页', link: '/' },
-      { text: '知识地图', link: '/#六层知识地图' },
+      { text: '学习路径', link: '/#六层学习路径' },
+      { text: '30天地图', link: '/#30天学习地图' },
       { text: '核心笔记', link: '/core-notes/' },
       { text: '关于', link: '/#关于本站' }
     ],
@@ -164,8 +172,13 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/auto-tech/auto-tech-docs/edit/main/docs/:path',
+      pattern: 'https://github.com/CroissantSong/car-knowledge-site/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
+    },
+
+    footer: {
+      message: '为非汽车专业新人设计的汽车技术通识学习路径',
+      copyright: '内容持续迭代，请以课程页和知识地图为准'
     },
 
     darkModeSwitchLabel: '深色模式',
