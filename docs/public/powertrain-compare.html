@@ -76,7 +76,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
@@ -104,6 +104,45 @@ h1 {
   color: #fff;
   background: linear-gradient(135deg, var(--teal), var(--blue));
   box-shadow: 0 10px 26px rgba(37, 99, 235, 0.18);
+}
+
+.mode-summary {
+  max-width: 780px;
+  min-height: 58px;
+  margin: 0 auto 22px;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  text-align: center;
+}
+
+.mode-summary strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.mode-summary span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.78rem;
+}
+
+body[data-mode="drive"] .mode-summary {
+  border-color: color-mix(in srgb, var(--blue) 34%, var(--border));
+}
+
+body[data-mode="cruise"] .mode-summary {
+  border-color: color-mix(in srgb, var(--teal) 40%, var(--border));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--teal) 10%, var(--surface)), var(--surface));
+}
+
+body[data-mode="brake"] .mode-summary {
+  border-color: color-mix(in srgb, var(--regen) 42%, var(--border));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--regen) 10%, var(--surface)), var(--surface));
 }
 
 .lanes {
@@ -235,6 +274,32 @@ h1 {
 .flow-dot.elec { background: var(--elec); box-shadow: 0 0 8px var(--elec); }
 .flow-dot.mech { background: var(--mech); box-shadow: 0 0 8px var(--mech); }
 .flow-dot.regen { background: var(--regen); box-shadow: 0 0 8px var(--regen); animation-direction: reverse; }
+.flow-dot.heat { background: var(--heat); box-shadow: 0 0 8px var(--heat); }
+
+body[data-mode="cruise"] .arrow-inner {
+  width: 3px;
+  opacity: 0.62;
+}
+
+body[data-mode="cruise"] .flow-dot {
+  width: 6px;
+  height: 6px;
+  left: -1.5px;
+  opacity: 0.72;
+  animation-duration: 2.4s;
+}
+
+body[data-mode="cruise"] .node {
+  background: color-mix(in srgb, var(--surface-strong) 92%, var(--teal) 8%);
+}
+
+body[data-mode="brake"] .arrow-inner {
+  width: 5px;
+}
+
+body[data-mode="brake"] .flow-dot {
+  animation-duration: 1.6s;
+}
 
 .tooltip {
   display: none;
@@ -341,6 +406,8 @@ h1 {
   <button class="mode-btn" data-mode="cruise" aria-pressed="false">🛣️ 巡航模式</button>
   <button class="mode-btn" data-mode="brake" aria-pressed="false">🔄 制动回收</button>
 </div>
+
+<div class="mode-summary" id="mode-summary"></div>
 
 <div class="lanes" id="lanes"></div>
 
@@ -449,14 +516,69 @@ const lanesData = [
 
 let currentMode = 'drive';
 
+const modeCopy = {
+  drive: {
+    title: '驱动模式：加速 / 起步',
+    desc: '箭头更粗、更快，表示能量快速流向车轮；重点看“谁在出力”。'
+  },
+  cruise: {
+    title: '巡航模式：稳定维持车速',
+    desc: '箭头变细、流速变慢，表示小功率持续输出；混动更偏发动机高效区直驱 / 发电调峰。'
+  },
+  brake: {
+    title: '制动回收：车轮反拖电机',
+    desc: '电驱路径切换为绿色回收流；燃油车主要把动能变成热，不能把能量存回电池。'
+  }
+};
+
+const laneModeConclusions = {
+  ice: {
+    drive: '驱动时路径最长：化学能→热能→机械能，每步都损失。热效率 ≈ 30–40%。',
+    cruise: '巡航时发动机维持较窄工况，变速箱升到高挡降低转速；能量仍来自燃油燃烧。',
+    brake: '燃油车制动时主要靠摩擦片把动能变成热，无法像电驱系统一样把能量回充。'
+  },
+  hev: {
+    drive: '驱动时油电协同：低速偏电、高负荷油电叠加，电池可放电补扭矩。',
+    cruise: '巡航时发动机更常处在高效区，电机小功率调峰或发电，能量流比加速更稳定。',
+    brake: '制动时电机/发电机回收部分动能给电池，机械制动负责最后减速和安全冗余。'
+  },
+  erev: {
+    drive: '驱动时车轮始终由电机带动；发动机只负责发电或给电池补能。',
+    cruise: '巡航时增程器可稳定发电，电池和电机维持车速；发动机仍不机械直连车轮。',
+    brake: '制动时驱动电机反拖发电，能量回到动力电池；增程器不参与轮端回收。'
+  },
+  bev: {
+    drive: '驱动路径最短：电池→控制器→电机→车轮，效率高、响应快。',
+    cruise: '巡航时电池低功率持续放电，电机在高效区维持车速，能量流更细更慢。',
+    brake: '制动时电机反向发电回充电池，机械制动补足低速和急刹场景。'
+  }
+};
+
+function renderModeSummary(mode) {
+  const summary = document.getElementById('mode-summary');
+  const copy = modeCopy[mode];
+  summary.innerHTML = `<strong>${copy.title}</strong><span>${copy.desc}</span>`;
+}
+
+function getModeArrowType(laneId, baseType, mode) {
+  if (mode === 'brake') {
+    return laneId === 'ice' ? 'heat' : 'regen';
+  }
+
+  return baseType;
+}
+
 // ── RENDER ──
 function renderLanes(mode) {
+  document.body.dataset.mode = mode;
+  renderModeSummary(mode);
+
   const container = document.getElementById('lanes');
   container.innerHTML = '';
 
   lanesData.forEach(lane => {
     const laneDiv = document.createElement('div');
-    laneDiv.className = `lane lane-${lane.id}`;
+    laneDiv.className = `lane lane-${lane.id} mode-${mode}`;
 
     let html = `<div class="lane-title"><span class="icon">${lane.icon}</span>${lane.title}</div>`;
     html += '<div class="flow">';
@@ -466,8 +588,9 @@ function renderLanes(mode) {
       if (i < lane.nodes.length - 1) {
         const arrow = lane.arrows.find(a => a.from === i && a.to === i + 1);
         if (arrow) {
-          let arrowClass = `energy-${arrow.type}`;
-          html += `<div class="arrow"><div class="arrow-inner ${arrowClass}"><div class="flow-dot ${arrow.type}"></div></div>${arrow.label ? `<span class="arrow-label">${arrow.label}</span>` : ''}</div>`;
+          const arrowType = getModeArrowType(lane.id, arrow.type, mode);
+          let arrowClass = `energy-${arrowType}`;
+          html += `<div class="arrow"><div class="arrow-inner ${arrowClass}"><div class="flow-dot ${arrowType}"></div></div>${arrow.label ? `<span class="arrow-label">${arrow.label}</span>` : ''}</div>`;
         } else {
           html += '<div class="arrow"></div>';
         }
@@ -475,7 +598,7 @@ function renderLanes(mode) {
     });
 
     html += '</div>';
-    html += `<div class="conclusion ${lane.conclusionClass}">${lane.conclusion}</div>`;
+    html += `<div class="conclusion ${lane.conclusionClass}">${laneModeConclusions[lane.id][mode]}</div>`;
     laneDiv.innerHTML = html;
     container.appendChild(laneDiv);
   });
