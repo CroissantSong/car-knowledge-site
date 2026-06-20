@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">扭矩与功率曲线对比示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">扭矩、功率与不同动力源曲线</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">日常体感多来自中低转扭矩；最高车速和持续加速能力还要看功率。</text>
+  <rect x="98" y="136" width="1004" height="420" rx="8" class="panel"/>
+  <path d="M176 478 V198 H1018" class="thin"/>
+  <path d="M190 428 C320 428 420 300 548 300 C690 300 790 360 940 410" fill="none" stroke="#d97706" stroke-width="6"/>
+  <path d="M190 442 C310 408 454 330 600 246 C734 168 856 192 940 282" fill="none" stroke="#2563eb" stroke-width="6"/>
+  <path d="M190 246 C380 246 520 246 660 315 C782 374 870 432 940 454" fill="none" stroke="#15803d" stroke-width="6"/>
+  <text x="214" y="188" class="small muted" text-anchor="start">扭矩 / 功率</text>
+  <text x="1018" y="506" class="small muted" text-anchor="middle">转速 rpm</text>
+  <rect x="742" y="166" width="280" height="126" rx="8" fill="#fff" stroke="#d7dee8" stroke-width="2"/>
+  <path d="M766 198 H822" stroke="#d97706" stroke-width="6"/>
+  <text x="842" y="204" class="small ink" text-anchor="start">涡轮/汽油机扭矩平台</text>
+  <path d="M766 234 H822" stroke="#2563eb" stroke-width="6"/>
+  <text x="842" y="240" class="small ink" text-anchor="start">功率随转速上升</text>
+  <path d="M766 270 H822" stroke="#15803d" stroke-width="6"/>
+  <text x="842" y="276" class="small ink" text-anchor="start">电机低速大扭矩</text>
+  
+  <rect x="160" y="580" width="258" height="66" rx="8" class="panel-soft"/>
+  <text x="289" y="614" class="section ink" text-anchor="middle">新人判断</text>
+  <text y="646" class="small muted" text-anchor="middle"><tspan x="289" dy="0">起步/超车看扭矩区间</tspan></text>
+
+  
+  <rect x="470" y="580" width="258" height="66" rx="8" class="panel-soft"/>
+  <text x="599" y="614" class="section ink" text-anchor="middle">工程判断</text>
+  <text y="646" class="small muted" text-anchor="middle"><tspan x="599" dy="0">还要看齿比、车重、轮胎</tspan></text>
+
+  
+  <rect x="780" y="580" width="258" height="66" rx="8" class="panel-soft"/>
+  <text x="909" y="614" class="section ink" text-anchor="middle">电动车差异</text>
+  <text y="646" class="small muted" text-anchor="middle"><tspan x="909" dy="0">0 rpm 即可输出大扭矩</tspan></text>
+
+
+</svg>

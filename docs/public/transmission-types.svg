@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">主流变速箱类型对比示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">主流变速箱：不同结构解决同一个问题</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">把发动机高转速、小扭矩翻译成车轮可用的速度与驱动力。</text>
+  
+  <rect x="70" y="142" width="245" height="340" rx="8" class="panel"/>
+  <text x="192.5" y="176" class="section ink" text-anchor="middle">MT 手动</text>
+  <text y="208" class="small muted" text-anchor="middle"><tspan x="192.5" dy="0">离合器 + 齿轮组</tspan><tspan x="192.5" dy="22">驾驶员选择档位</tspan><tspan x="192.5" dy="22">效率高、操作多</tspan></text>
+
+  <path d="M118 346 H268 M156 292 V400 M224 292 V400" class="stroke"/>
+  
+  <rect x="345" y="142" width="245" height="340" rx="8" class="panel"/>
+  <text x="467.5" y="176" class="section ink" text-anchor="middle">AT 自动</text>
+  <text y="208" class="small muted" text-anchor="middle"><tspan x="467.5" dy="0">液力变矩器</tspan><tspan x="467.5" dy="22">行星齿轮组</tspan><tspan x="467.5" dy="22">成熟平顺、成本高</tspan></text>
+
+  <circle cx="468" cy="330" r="76" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="468" cy="330" r="26" class="soft-amber" stroke="#152236" stroke-width="3"/>
+  <path d="M412 330 H524 M468 274 V386" class="thin"/>
+  
+  <rect x="620" y="142" width="245" height="340" rx="8" class="panel"/>
+  <text x="742.5" y="176" class="section ink" text-anchor="middle">DCT 双离合</text>
+  <text y="208" class="small muted" text-anchor="middle"><tspan x="742.5" dy="0">奇数/偶数两套轴</tspan><tspan x="742.5" dy="22">下一档预啮合</tspan><tspan x="742.5" dy="22">换挡快、标定敏感</tspan></text>
+
+  <path d="M694 288 H796 M694 374 H796 M694 288 V374 M796 288 V374" class="stroke"/>
+  <path d="M694 288 L652 330 M694 374 L652 330" class="thin"/>
+  
+  <rect x="895" y="142" width="245" height="340" rx="8" class="panel"/>
+  <text x="1017.5" y="176" class="section ink" text-anchor="middle">CVT 无级</text>
+  <text y="208" class="small muted" text-anchor="middle"><tspan x="1017.5" dy="0">锥轮 + 钢带</tspan><tspan x="1017.5" dy="22">连续改变传动比</tspan><tspan x="1017.5" dy="22">平顺省油</tspan></text>
+
+  <circle cx="978" cy="330" r="52" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="1064" cy="330" r="78" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <path d="M978 278 L1064 252 M978 382 L1064 408" class="stroke"/>
+  <rect x="190" y="542" width="820" height="72" rx="8" class="panel-soft"/>
+  <text x="600" y="586" class="label ink" text-anchor="middle">纯电动车多数只需单级减速器，因为电机高效转速范围远大于内燃机。</text>
+
+</svg>

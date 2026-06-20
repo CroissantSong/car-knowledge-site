@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">差速器与转弯轮速差示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">差速器：允许左右轮转速不同</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">转弯时外侧车轮走更长路径，差速器让两侧车轮不必硬拖着转。</text>
+  <path d="M192 452 C192 250 346 138 548 138" fill="none" stroke="#d97706" stroke-width="8"/>
+  <path d="M298 452 C298 316 406 244 548 244" fill="none" stroke="#2563eb" stroke-width="8"/>
+  <circle cx="236" cy="452" r="46" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="344" cy="452" r="46" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <rect x="245" y="384" width="90" height="40" rx="8" class="soft-slate" stroke="#152236" stroke-width="3"/>
+  <text x="540" y="160" class="label amber" text-anchor="start">外侧路径更长 → 轮速更高</text>
+  <text x="540" y="268" class="label blue" text-anchor="start">内侧路径更短 → 轮速更低</text>
+  <rect x="706" y="158" width="356" height="356" rx="8" class="panel"/>
+  <text x="884" y="198" class="section ink" text-anchor="middle">伞齿轮差速器</text>
+  <circle cx="884" cy="348" r="96" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="884" cy="348" r="30" class="soft-amber" stroke="#152236" stroke-width="3"/>
+  <path d="M772 348 H996" class="stroke"/>
+  <path d="M884 236 V460" class="stroke"/>
+  <path d="M816 280 L952 416 M952 280 L816 416" class="thin"/>
+  <circle cx="772" cy="348" r="28" class="soft-blue" stroke="#152236" stroke-width="3"/>
+  <circle cx="996" cy="348" r="28" class="soft-blue" stroke="#152236" stroke-width="3"/>
+  <text x="884" y="486" class="small muted" text-anchor="middle">直行时近似等速，转弯时自动分配转速差</text>
+  <rect x="138" y="544" width="924" height="74" rx="8" class="panel-soft"/>
+  <text x="600" y="588" class="label ink" text-anchor="middle">差速锁的作用相反：在脱困时限制转速差，让扭矩不要只流向打滑车轮。</text>
+
+</svg>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">车企信息流与岗位使用场景示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">车企新人：从信息源到工作判断</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">外部信息提供市场和法规信号，内部评审把信号转成需求、验证和交付。</text>
+  
+  <rect x="78" y="144" width="238" height="112" rx="8" class="panel"/>
+  <text x="197" y="178" class="section ink" text-anchor="middle">工信部公告</text>
+  <text y="210" class="small muted" text-anchor="middle"><tspan x="197" dy="0">新车准入、参数</tspan><tspan x="197" dy="22">上市前技术线索</tspan></text>
+
+  
+  <rect x="78" y="292" width="238" height="112" rx="8" class="panel"/>
+  <text x="197" y="326" class="section ink" text-anchor="middle">销量与实测</text>
+  <text y="358" class="small muted" text-anchor="middle"><tspan x="197" dy="0">销量趋势、续航</tspan><tspan x="197" dy="22">竞品表现</tspan></text>
+
+  
+  <rect x="78" y="440" width="238" height="112" rx="8" class="panel"/>
+  <text x="197" y="474" class="section ink" text-anchor="middle">技术媒体/供应商</text>
+  <text y="506" class="small muted" text-anchor="middle"><tspan x="197" dy="0">智驾、座舱、三电</tspan><tspan x="197" dy="22">趋势与方案</tspan></text>
+
+  <rect x="470" y="218" width="260" height="260" rx="8" class="panel-soft"/>
+  <text x="600" y="270" class="section ink" text-anchor="middle">信息中台</text>
+  <text y="315" class="label muted" text-anchor="middle"><tspan x="600" dy="0">参数归一</tspan><tspan x="600" dy="22">竞品对齐</tspan><tspan x="600" dy="22">风险识别</tspan><tspan x="600" dy="22">需求拆解</tspan></text>
+  
+  <rect x="884" y="124" width="238" height="96" rx="8" class="panel"/>
+  <text x="1003" y="158" class="section ink" text-anchor="middle">产品/规划</text>
+  <text y="190" class="small muted" text-anchor="middle"><tspan x="1003" dy="0">定义卖点和竞品带宽</tspan></text>
+
+  
+  <rect x="884" y="252" width="238" height="96" rx="8" class="panel"/>
+  <text x="1003" y="286" class="section ink" text-anchor="middle">工程/测试</text>
+  <text y="318" class="small muted" text-anchor="middle"><tspan x="1003" dy="0">判断技术可行性和验证</tspan></text>
+
+  
+  <rect x="884" y="380" width="238" height="96" rx="8" class="panel"/>
+  <text x="1003" y="414" class="section ink" text-anchor="middle">采购/质量</text>
+  <text y="446" class="small muted" text-anchor="middle"><tspan x="1003" dy="0">锁定供应风险和质量闭环</tspan></text>
+
+  
+  <rect x="884" y="508" width="238" height="96" rx="8" class="panel"/>
+  <text x="1003" y="542" class="section ink" text-anchor="middle">销售/售后</text>
+  <text y="574" class="small muted" text-anchor="middle"><tspan x="1003" dy="0">转成话术、维修与召回</tspan></text>
+
+  <path d="M316 200 H462" class="arrow"/>
+  <path d="M316 348 H462" class="arrow"/>
+  <path d="M316 496 H462" class="arrow"/>
+  <path d="M730 284 H876" class="arrow"/>
+  <path d="M730 342 H876" class="arrow"/>
+  <path d="M730 400 H876" class="arrow"/>
+  <path d="M730 458 H876" class="arrow"/>
+
+</svg>

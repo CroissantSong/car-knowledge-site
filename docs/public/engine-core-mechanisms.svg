@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">发动机机构、曲线与循环示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">发动机核心机构与曲线</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">把往复运动转成旋转运动，并用配气、燃烧和热循环控制效率。</text>
+  <rect x="72" y="132" width="332" height="416" rx="8" class="panel"/>
+  <text x="238" y="172" class="section ink" text-anchor="middle">曲柄连杆机构</text>
+  <rect x="192" y="214" width="92" height="84" rx="8" fill="#e5edff" stroke="#152236" stroke-width="4"/>
+  <path d="M238 298 L282 384" class="stroke"/>
+  <circle cx="238" cy="258" r="20" class="soft-amber" stroke="#152236" stroke-width="3"/>
+  <circle cx="282" cy="384" r="46" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="282" cy="384" r="10" class="blue"/>
+  <path d="M282 384 L342 384" class="stroke"/>
+  <text x="238" y="330" class="small muted" text-anchor="middle">活塞往复</text>
+  <text x="314" y="446" class="small muted" text-anchor="middle">曲轴旋转</text>
+  <rect x="444" y="132" width="332" height="416" rx="8" class="panel"/>
+  <text x="610" y="172" class="section ink" text-anchor="middle">配气机构</text>
+  <path d="M514 262 H706" class="stroke"/>
+  <circle cx="560" cy="262" r="24" class="soft-green" stroke="#152236" stroke-width="3"/>
+  <circle cx="660" cy="262" r="24" class="soft-green" stroke="#152236" stroke-width="3"/>
+  <path d="M560 286 V392 M660 286 V392" class="stroke"/>
+  <path d="M522 392 H698" class="thin"/>
+  <path d="M508 228 C545 194 594 194 632 228 S698 260 724 222" class="thin"/>
+  <text x="610" y="438" class="small muted" text-anchor="middle">凸轮轴按时顶开进/排气门</text>
+  <rect x="816" y="132" width="312" height="416" rx="8" class="panel"/>
+  <text x="972" y="172" class="section ink" text-anchor="middle">P-V / 摩擦圆</text>
+  <path d="M878 416 V230 H1074" class="thin"/>
+  <path d="M910 380 C910 292 966 238 1020 250 C1078 262 1080 350 1028 382 C986 407 942 404 910 380Z" fill="none" stroke="#d97706" stroke-width="5"/>
+  <path d="M920 488 C960 438 1002 438 1040 488 C1002 536 960 536 920 488Z" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <circle cx="980" cy="488" r="10" class="blue"/>
+  <text x="910" y="226" class="tiny muted" text-anchor="middle">P</text>
+  <text x="1084" y="420" class="tiny muted" text-anchor="middle">V</text>
+  <text x="980" y="548" class="small muted" text-anchor="middle">抓地力边界</text>
+  <path d="M404 342 H444" class="arrow"/>
+  <path d="M776 342 H816" class="arrow"/>
+
+</svg>

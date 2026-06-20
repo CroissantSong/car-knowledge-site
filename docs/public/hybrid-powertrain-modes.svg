@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">混动结构、增程模式与快充曲线示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">混动与增程：能量流怎么走</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">串联、并联、混联的核心差别，是发动机能否直接参与驱动车轮。</text>
+  
+  <rect x="70" y="138" width="310" height="112" rx="8" class="panel"/>
+  <text x="225" y="172" class="section ink" text-anchor="middle">串联 / 增程</text>
+  <text y="204" class="small muted" text-anchor="middle"><tspan x="225" dy="0">发动机只发电</tspan><tspan x="225" dy="22">电机负责驱动车轮</tspan></text>
+
+  
+  <rect x="445" y="138" width="310" height="112" rx="8" class="panel"/>
+  <text x="600" y="172" class="section ink" text-anchor="middle">并联</text>
+  <text y="204" class="small muted" text-anchor="middle"><tspan x="600" dy="0">发动机和电机都可驱动</tspan><tspan x="600" dy="22">结构直接、机械效率高</tspan></text>
+
+  
+  <rect x="820" y="138" width="310" height="112" rx="8" class="panel"/>
+  <text x="975" y="172" class="section ink" text-anchor="middle">混联</text>
+  <text y="204" class="small muted" text-anchor="middle"><tspan x="975" dy="0">功率分流</tspan><tspan x="975" dy="22">按工况选择最高效路径</tspan></text>
+
+  <rect x="118" y="326" width="92" height="54" rx="8" class="soft-amber" stroke="#d97706" stroke-width="3"/>
+  <rect x="286" y="326" width="92" height="54" rx="8" class="soft-blue" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="250" cy="458" r="42" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <text x="164" y="360" class="small ink" text-anchor="middle">发动机</text>
+  <text x="332" y="360" class="small ink" text-anchor="middle">电机</text>
+  <path d="M210 353 H280" class="arrow"/>
+  <path d="M332 382 L266 420" class="arrow"/>
+  <rect x="488" y="326" width="92" height="54" rx="8" class="soft-amber" stroke="#d97706" stroke-width="3"/>
+  <rect x="650" y="326" width="92" height="54" rx="8" class="soft-blue" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="615" cy="458" r="42" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <path d="M534 380 L604 420" class="arrow"/>
+  <path d="M696 382 L626 420" class="arrow"/>
+  <rect x="862" y="326" width="92" height="54" rx="8" class="soft-amber" stroke="#d97706" stroke-width="3"/>
+  <rect x="1022" y="326" width="92" height="54" rx="8" class="soft-blue" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="978" cy="458" r="42" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <path d="M954 353 H1016" class="arrow"/>
+  <path d="M908 380 L968 420" class="arrow"/>
+  <path d="M1068 382 L990 420" class="arrow"/>
+  <path d="M108 590 V515 H376" class="thin"/>
+  <path d="M128 572 C178 520 246 526 306 540 C344 548 362 536 376 520" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <text x="112" y="510" class="tiny muted" text-anchor="start">SOC</text>
+  <text x="368" y="614" class="tiny muted" text-anchor="middle">时间</text>
+  <text x="246" y="622" class="small muted" text-anchor="middle">快充前快后慢：中高 SOC 后充电功率下降</text>
+
+</svg>

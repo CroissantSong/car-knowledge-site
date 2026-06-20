@@ -676,3 +676,46 @@ body {
 .path-summary table {
   margin-top: 16px;
 }
+
+.knowledge-figure,
+.knowledge-figure-grid {
+  margin: 24px 0;
+}
+
+.knowledge-figure {
+  padding: 14px;
+  border: 1px solid var(--auto-border);
+  border-radius: 8px;
+  background: var(--auto-card-strong);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.knowledge-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+.knowledge-figure figcaption {
+  margin-top: 10px;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.knowledge-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.knowledge-figure-grid .knowledge-figure {
+  margin: 0;
+}
+
+.knowledge-figure-grid img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}

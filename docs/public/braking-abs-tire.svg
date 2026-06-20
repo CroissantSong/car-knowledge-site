@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-ABS-">
+  <title id="-ABS-">制动、ABS 与轮胎规格示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">制动、ABS 与轮胎规格</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">制动把动能变成热，ABS/ESP 通过轮速信号避免抱死并修正车身姿态。</text>
+  <rect x="70" y="134" width="310" height="410" rx="8" class="panel"/>
+  <text x="225" y="174" class="section ink" text-anchor="middle">盘式制动器</text>
+  <circle cx="225" cy="325" r="98" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="225" cy="325" r="44" class="soft-slate" stroke="#61728a" stroke-width="3"/>
+  <path d="M288 244 C344 286 348 364 288 408" fill="#fee2e2" stroke="#dc2626" stroke-width="4"/>
+  <text x="310" y="464" class="small muted" text-anchor="middle">卡钳夹紧制动盘</text>
+  <rect x="446" y="134" width="310" height="410" rx="8" class="panel"/>
+  <text x="601" y="174" class="section ink" text-anchor="middle">ABS 闭环</text>
+  
+  <rect x="486" y="220" width="230" height="72" rx="8" class="panel-soft"/>
+  <text x="601" y="254" class="section ink" text-anchor="middle">轮速传感器</text>
+  <text y="286" class="small muted" text-anchor="middle"><tspan x="601" dy="0">识别抱死趋势</tspan></text>
+
+  
+  <rect x="486" y="328" width="230" height="72" rx="8" class="panel-soft"/>
+  <text x="601" y="362" class="section ink" text-anchor="middle">ABS 控制器</text>
+  <text y="394" class="small muted" text-anchor="middle"><tspan x="601" dy="0">计算增压/保压/减压</tspan></text>
+
+  
+  <rect x="486" y="436" width="230" height="72" rx="8" class="panel-soft"/>
+  <text x="601" y="470" class="section ink" text-anchor="middle">液压执行器</text>
+  <text y="502" class="small muted" text-anchor="middle"><tspan x="601" dy="0">快速调节制动力</tspan></text>
+
+  <path d="M601 292 V323" class="arrow"/>
+  <path d="M601 400 V431" class="arrow"/>
+  <path d="M718 472 C790 410 790 270 718 252" class="arrow"/>
+  <rect x="822" y="134" width="310" height="410" rx="8" class="panel"/>
+  <text x="977" y="174" class="section ink" text-anchor="middle">轮胎规格</text>
+  <rect x="898" y="245" width="162" height="64" rx="8" fill="#152236"/>
+  <text x="979" y="286" class="label" fill="#fff" text-anchor="middle">205/55 R16 91V</text>
+  <path d="M914 316 V374 M976 316 V374 M1042 316 V374" class="thin"/>
+  <text x="914" y="402" class="small muted" text-anchor="middle">胎宽</text>
+  <text x="976" y="402" class="small muted" text-anchor="middle">扁平比</text>
+  <text x="1042" y="402" class="small muted" text-anchor="middle">轮辋/载重/速度</text>
+  <text x="977" y="468" class="small muted" text-anchor="middle">轮胎决定制动、转向和舒适性的最终上限</text>
+
+</svg>

@@ -79,6 +79,7 @@
 
 **小测**：如果你想在某款新车上市前就知道它的电池容量和电机功率，应该去查哪个来源？
 
-::: tip 配图提示
-建议配图：车企信息流示意图、岗位与信息源对照表。
-:::
+<figure class="knowledge-figure">
+  <img src="/industry-info-flow.svg" alt="车企信息流从外部来源进入内部岗位判断的示意图" loading="lazy">
+  <figcaption>图：车企新人常用信息源如何进入产品、工程、采购、质量、销售和售后工作判断。本站自绘 SVG。</figcaption>
+</figure>

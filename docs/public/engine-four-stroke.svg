@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">四冲程与发动机布置示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">内燃机四冲程</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">只有做功冲程直接输出动力，其余冲程依靠飞轮惯性完成。</text>
+  
+      <rect x="78" y="140" width="230" height="280" rx="8" class="panel"/>
+      <text x="193" y="178" class="section ink" text-anchor="middle">1. 进气</text>
+      <rect x="148" y="214" width="90" height="154" rx="8" fill="#fff" stroke="#152236" stroke-width="4"/>
+      <rect x="157" y="274" width="72" height="34" rx="5" class="soft-blue,soft-amber,soft-red,soft-slate" stroke="#152236" stroke-width="3"/>
+      <path d="M193 308 L193 374" class="thin"/>
+      <circle cx="193" cy="374" r="18" fill="#e7edf4" stroke="#152236" stroke-width="3"/>
+      <path d="M156 214 L156 190" class="thin"/>
+      <path d="M230 214 L230 190" class="thin"/>
+      <text x="150" y="452" class="small muted" text-anchor="start">进气门开 / 排气门关</text>
+    
+      <rect x="356" y="140" width="230" height="280" rx="8" class="panel"/>
+      <text x="471" y="178" class="section ink" text-anchor="middle">2. 压缩</text>
+      <rect x="426" y="214" width="90" height="154" rx="8" fill="#fff" stroke="#152236" stroke-width="4"/>
+      <rect x="435" y="218" width="72" height="34" rx="5" class="soft-blue,soft-amber,soft-red,soft-slate" stroke="#152236" stroke-width="3"/>
+      <path d="M471 252 L471 374" class="thin"/>
+      <circle cx="471" cy="374" r="18" fill="#e7edf4" stroke="#152236" stroke-width="3"/>
+      <path d="M434 214 L434 190" class="thin"/>
+      <path d="M508 214 L508 190" class="thin"/>
+      <text x="428" y="452" class="small muted" text-anchor="start">两门关闭 / 活塞上行</text>
+    
+      <rect x="634" y="140" width="230" height="280" rx="8" class="panel"/>
+      <text x="749" y="178" class="section ink" text-anchor="middle">3. 做功</text>
+      <rect x="704" y="214" width="90" height="154" rx="8" fill="#fff" stroke="#152236" stroke-width="4"/>
+      <rect x="713" y="292" width="72" height="34" rx="5" class="soft-blue,soft-amber,soft-red,soft-slate" stroke="#152236" stroke-width="3"/>
+      <path d="M749 326 L749 374" class="thin"/>
+      <circle cx="749" cy="374" r="18" fill="#e7edf4" stroke="#152236" stroke-width="3"/>
+      <path d="M712 214 L712 190" class="thin"/>
+      <path d="M786 214 L786 190" class="thin"/>
+      <text x="706" y="452" class="small muted" text-anchor="start">火花点火 / 活塞下行</text>
+    
+      <rect x="912" y="140" width="230" height="280" rx="8" class="panel"/>
+      <text x="1027" y="178" class="section ink" text-anchor="middle">4. 排气</text>
+      <rect x="982" y="214" width="90" height="154" rx="8" fill="#fff" stroke="#152236" stroke-width="4"/>
+      <rect x="991" y="224" width="72" height="34" rx="5" class="soft-blue,soft-amber,soft-red,soft-slate" stroke="#152236" stroke-width="3"/>
+      <path d="M1027 258 L1027 374" class="thin"/>
+      <circle cx="1027" cy="374" r="18" fill="#e7edf4" stroke="#152236" stroke-width="3"/>
+      <path d="M990 214 L990 190" class="thin"/>
+      <path d="M1064 214 L1064 190" class="thin"/>
+      <text x="984" y="452" class="small muted" text-anchor="start">排气门开 / 废气排出</text>
+    
+  <rect x="148" y="508" width="904" height="86" rx="8" class="panel-soft"/>
+  <text x="600" y="540" class="label ink" text-anchor="middle">常见布置：直列结构简单，V 型更紧凑，水平对置重心低；电机没有气缸排列问题。</text>
+  <path d="M310 570 h82 m-41 -35 v70" class="thin"/>
+  <path d="M546 570 l-52 -46 m52 46 l52 -46" class="thin"/>
+  <path d="M770 570 h-76 m76 0 h76" class="thin"/>
+
+</svg>

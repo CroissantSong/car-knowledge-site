@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">车身四大工艺与底盘合装示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">车身制造：冲、焊、涂、总</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">四大工艺决定外观、安全、节拍、成本，底盘与动力在总装阶段合到车身上。</text>
+  
+  <rect x="70" y="140" width="215" height="112" rx="8" class="panel-soft"/>
+  <text x="177.5" y="174" class="section ink" text-anchor="middle">1 冲压</text>
+  <text y="206" class="small muted" text-anchor="middle"><tspan x="177.5" dy="0">钢/铝板材</tspan><tspan x="177.5" dy="22">成形为门盖侧围</tspan></text>
+
+  
+  <rect x="335" y="140" width="215" height="112" rx="8" class="panel-soft"/>
+  <text x="442.5" y="174" class="section ink" text-anchor="middle">2 焊接</text>
+  <text y="206" class="small muted" text-anchor="middle"><tspan x="442.5" dy="0">冲压件连接</tspan><tspan x="442.5" dy="22">形成白车身 BIW</tspan></text>
+
+  
+  <rect x="600" y="140" width="215" height="112" rx="8" class="panel-soft"/>
+  <text x="707.5" y="174" class="section ink" text-anchor="middle">3 涂装</text>
+  <text y="206" class="small muted" text-anchor="middle"><tspan x="707.5" dy="0">前处理、电泳</tspan><tspan x="707.5" dy="22">中涂、面漆、清漆</tspan></text>
+
+  
+  <rect x="865" y="140" width="215" height="112" rx="8" class="panel-soft"/>
+  <text x="972.5" y="174" class="section ink" text-anchor="middle">4 总装</text>
+  <text y="206" class="small muted" text-anchor="middle"><tspan x="972.5" dy="0">底盘、动力、内饰</tspan><tspan x="972.5" dy="22">电气电子上车</tspan></text>
+
+  <path d="M287 196 H330" class="arrow"/>
+  <path d="M552 196 H595" class="arrow"/>
+  <path d="M817 196 H860" class="arrow"/>
+  <path d="M184 396 C230 338 340 312 520 312 H742 C840 312 918 350 976 416" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <path d="M310 316 H748 L820 405 H236Z" fill="#f8fafc" stroke="#61728a" stroke-width="3"/>
+  <rect x="366" y="336" width="132" height="54" rx="6" class="soft-red"/>
+  <rect x="510" y="336" width="120" height="54" rx="6" class="soft-blue"/>
+  <rect x="642" y="336" width="128" height="54" rx="6" class="soft-green"/>
+  <path d="M190 444 H1010" class="stroke"/>
+  <circle cx="310" cy="444" r="52" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="884" cy="444" r="52" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <text x="432" y="366" class="small ink" text-anchor="middle">热成型钢</text>
+  <text x="570" y="366" class="small ink" text-anchor="middle">高强钢</text>
+  <text x="706" y="366" class="small ink" text-anchor="middle">铝/覆盖件</text>
+  
+  <rect x="105" y="530" width="290" height="78" rx="8" class="panel"/>
+  <text x="250" y="564" class="section ink" text-anchor="middle">白车身</text>
+  <text y="596" class="small muted" text-anchor="middle"><tspan x="250" dy="0">喷漆前的车身骨架，碰撞结构在这里定型</tspan></text>
+
+  
+  <rect x="455" y="530" width="290" height="78" rx="8" class="panel"/>
+  <text x="600" y="564" class="section ink" text-anchor="middle">底盘系统</text>
+  <text y="596" class="small muted" text-anchor="middle"><tspan x="600" dy="0">悬架、转向、制动把车身连接到路面</tspan></text>
+
+  
+  <rect x="805" y="530" width="290" height="78" rx="8" class="panel"/>
+  <text x="950" y="564" class="section ink" text-anchor="middle">总装合车</text>
+  <text y="596" class="small muted" text-anchor="middle"><tspan x="950" dy="0">动力、电气、内饰装入后成为可交付整车</tspan></text>
+
+
+</svg>

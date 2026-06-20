@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="OEM-Tier-GVDP-">
+  <title id="OEM-Tier-GVDP-">OEM、Tier 供应商与 GVDP 里程碑示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">主机厂、供应商与项目里程碑</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">量产交付靠跨团队协作：OEM 定义整车，Tier1 集成系统，Tier2 提供关键零件。</text>
+  <rect x="470" y="182" width="260" height="130" rx="8" class="panel-soft"/>
+  <text x="600" y="232" class="section ink" text-anchor="middle">OEM 主机厂</text>
+  <text x="600" y="268" class="small muted" text-anchor="middle">整车定义 / 集成 / 验证</text>
+  
+  <rect x="104" y="152" width="250" height="98" rx="8" class="panel"/>
+  <text x="229" y="186" class="section ink" text-anchor="middle">Tier1 系统供应商</text>
+  <text y="218" class="small muted" text-anchor="middle"><tspan x="229" dy="0">制动、座椅、域控、电驱等系统</tspan></text>
+
+  
+  <rect x="846" y="152" width="250" height="98" rx="8" class="panel"/>
+  <text x="971" y="186" class="section ink" text-anchor="middle">Tier2 零部件供应商</text>
+  <text y="218" class="small muted" text-anchor="middle"><tspan x="971" dy="0">芯片、传感器、轴承、材料等</tspan></text>
+
+  
+  <rect x="104" y="328" width="250" height="98" rx="8" class="panel"/>
+  <text x="229" y="362" class="section ink" text-anchor="middle">内部职能</text>
+  <text y="394" class="small muted" text-anchor="middle"><tspan x="229" dy="0">产品、研发、采购、质量、制造</tspan></text>
+
+  
+  <rect x="846" y="328" width="250" height="98" rx="8" class="panel"/>
+  <text x="971" y="362" class="section ink" text-anchor="middle">法规与市场</text>
+  <text y="394" class="small muted" text-anchor="middle"><tspan x="971" dy="0">准入、标准、用户与竞品信号</tspan></text>
+
+  <path d="M356 200 H462" class="arrow"/>
+  <path d="M838 200 H734" class="arrow"/>
+  <path d="M356 376 H462" class="arrow"/>
+  <path d="M838 376 H734" class="arrow"/>
+  <rect x="110" y="532" width="980" height="60" rx="8" fill="#fff" stroke="#d7dee8" stroke-width="2"/>
+  <path d="M162 562 H1038" class="arrow"/>
+  <circle cx="190" cy="562" r="14" class="teal"/><text x="190" y="625" class="label ink" text-anchor="middle">概念</text><circle cx="390" cy="562" r="14" class="blue"/><text x="390" y="625" class="label ink" text-anchor="middle">立项</text><circle cx="590" cy="562" r="14" class="amber"/><text x="590" y="625" class="label ink" text-anchor="middle">工程样车</text><circle cx="790" cy="562" r="14" class="green"/><text x="790" y="625" class="label ink" text-anchor="middle">验证</text><circle cx="990" cy="562" r="14" class="red"/><text x="990" y="625" class="label ink" text-anchor="middle">SOP</text>
+
+</svg>
