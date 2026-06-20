@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { inBrowser, useRoute } from 'vitepress'
 import { nextTick, watch } from 'vue'
+import QuizBlock from './components/QuizBlock.vue'
 import './custom.css'
 
 function getMermaidThemeVariables() {
@@ -65,6 +66,60 @@ function enhanceCourseBlocks() {
   })
 }
 
+function escapeHtml(text) {
+  const div = document.createElement('div')
+  div.textContent = text
+  return div.innerHTML
+}
+
+function enhanceQuizzes() {
+  const quizBlocks = Array.from(document.querySelectorAll('.course-block-quiz:not([data-quiz-enhanced])'))
+  
+  quizBlocks.forEach((block) => {
+    block.dataset.quizEnhanced = 'true'
+    
+    // Get the full inner HTML of the block
+    const html = block.innerHTML
+    
+    // Try to split on **答案：** or **答案:** to extract question and answer
+    let questionPart = ''
+    let answerPart = ''
+    
+    const strongMatch = html.match(/<strong>小测[：:]<\/strong>\s*(.*)/s)
+    if (strongMatch) {
+      const afterLabel = strongMatch[1] // everything after **小测：**  
+      // Now try to split on **答案：** or **答案:**
+      const answerSplit = afterLabel.split(/\*\*答案[：:]\*\*/s)
+      if (answerSplit.length > 1) {
+        questionPart = answerSplit[0].trim()
+        answerPart = answerSplit.slice(1).join('**答案：**').trim()
+      } else {
+        questionPart = afterLabel.trim()
+      }
+    } else {
+      questionPart = block.textContent.replace(/^小测[：:]\s*/, '').trim()
+    }
+    
+    const hasAnswer = answerPart.length > 0
+    const answerHtml = hasAnswer 
+      ? `<div class="quiz-i-answer-label">✅ 答案</div><div class="quiz-i-answer-content">${answerPart}</div>`
+      : `<div class="quiz-i-answer-label">💭 思考提示</div><div class="quiz-i-answer-content">请先自己思考，再参考对应知识点的原理说明。答错不可怕——把卡住的地方记下来，那是你知识地图上的盲区。</div>`
+    
+    block.innerHTML = `
+      <div class="quiz-interactive">
+        <div class="quiz-i-question">
+          <span class="quiz-i-badge">Q</span>
+          <span class="quiz-i-text">${escapeHtml(questionPart)}</span>
+        </div>
+        <div class="quiz-i-answer" style="display:none">
+          ${answerHtml}
+        </div>
+        <button class="quiz-i-toggle" onclick="var a=this.previousElementSibling;var h=a.style.display==='none';a.style.display=h?'block':'none';this.textContent=h?'▲ 收起'+(this.dataset.hasAnswer==='true'?'答案':'提示'):'▼ 展开'+(this.dataset.hasAnswer==='true'?'答案':'思考提示')" data-has-answer="${hasAnswer}">▼ 展开${hasAnswer ? '答案' : '思考提示'}</button>
+      </div>
+    `
+  })
+}
+
 function wrapAutoDiagrams() {
   const diagrams = Array.from(document.querySelectorAll('.vp-doc svg.auto-diagram:not([data-diagram-wrapped])'))
 
@@ -89,11 +144,15 @@ function enhanceContent() {
   if (!inBrowser) return
 
   enhanceCourseBlocks()
+  enhanceQuizzes()
   wrapAutoDiagrams()
 }
 
 export default {
   extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('QuizBlock', QuizBlock)
+  },
   setup() {
     if (!inBrowser) return
 

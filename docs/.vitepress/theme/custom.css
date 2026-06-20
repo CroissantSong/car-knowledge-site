@@ -629,3 +629,148 @@ body {
     padding: 12px;
   }
 }
+
+/* ───────── 学习路径页 (path.md) ───────── */
+.path-overview-table table {
+  font-size: 14px;
+}
+
+.path-week {
+  margin-top: 54px;
+}
+
+.path-week > h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.path-week > h3 {
+  margin-top: 38px;
+}
+
+.path-week > blockquote {
+  margin: 0 0 28px;
+  padding: 12px 18px;
+  border-left: 4px solid var(--vp-c-brand-1);
+  border-radius: 0 8px 8px 0;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+  font-size: 15px;
+}
+
+.path-week > blockquote p {
+  margin: 0;
+}
+
+.path-week table {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.path-week table td:first-child {
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.path-summary table {
+  margin-top: 16px;
+}
+
+/* ───────── 小测交互增强 (已存在的 **小测：** 块) ───────── */
+.course-block-quiz {
+  border-color: color-mix(in srgb, #7c3aed 32%, var(--auto-border));
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), var(--auto-card));
+}
+
+.quiz-interactive {
+  /* container for JS-enhanced quiz blocks */
+}
+
+.quiz-i-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.quiz-i-badge {
+  flex-shrink: 0;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 6px;
+  color: #fff;
+  background: #7c3aed;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.quiz-i-text {
+  padding-top: 1px;
+  color: var(--auto-ink);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.quiz-i-answer {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 7px;
+  border: 1px solid color-mix(in srgb, var(--auto-green, #15803d) 20%, var(--auto-border));
+  background: color-mix(in srgb, var(--auto-green, #15803d) 7%, transparent);
+}
+
+.quiz-i-answer-label {
+  margin-bottom: 4px;
+  color: var(--auto-green, #15803d);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.quiz-i-answer-content {
+  color: var(--vp-c-text-1);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.quiz-i-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 5px 14px;
+  border: 1px solid color-mix(in srgb, #7c3aed 28%, var(--auto-border));
+  border-radius: 6px;
+  color: #7c3aed;
+  background: color-mix(in srgb, #7c3aed 6%, transparent);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.quiz-i-toggle:hover {
+  background: color-mix(in srgb, #7c3aed 14%, transparent);
+  border-color: #7c3aed;
+}
+
+/* Dark mode for quiz interaction */
+.dark .course-block-quiz {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.07), var(--auto-card));
+}
+
+.dark .quiz-i-answer {
+  border-color: color-mix(in srgb, var(--auto-green, #86efac) 22%, var(--auto-border));
+  background: color-mix(in srgb, var(--auto-green, #86efac) 9%, transparent);
+}
+
+.dark .quiz-i-toggle {
+  background: color-mix(in srgb, #7c3aed 10%, transparent);
+}
+
+.dark .quiz-i-toggle:hover {
+  background: color-mix(in srgb, #7c3aed 18%, transparent);
+}

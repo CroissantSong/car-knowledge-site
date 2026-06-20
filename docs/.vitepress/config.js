@@ -66,8 +66,8 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: '首页', link: '/' },
-      { text: '学习路径', link: '/#六层学习路径' },
-      { text: '30天地图', link: '/#30天学习地图' },
+      { text: '30天地图', link: '/path' },
+      { text: '六层路径', link: '/#六层学习路径' },
       { text: '核心笔记', link: '/core-notes/' },
       { text: '关于', link: '/#关于本站' }
     ],
