@@ -181,3 +181,11 @@ C. 把供应商围起来不让走
 D. 把问题报告锁在柜子里
 
 > **答案：B**。「围堵」是 8D 的 D3 步骤——先止住血（切断影响），再慢慢查病因（根因分析）。比如发现某批次刹车片有问题，立刻冻结该批次库存并通知 4S 店暂停使用，这就是围堵。
+
+---
+
+<div style="text-align:center; margin-top:24px; padding:16px; background:var(--vp-c-brand-soft); border-radius:10px;">
+
+<ProgressBadge path="/lessons/06-newcomer-terminology" mode="checkbox" />
+
+</div>

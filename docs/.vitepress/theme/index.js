@@ -3,6 +3,13 @@ import { inBrowser, useRoute } from 'vitepress'
 import { nextTick, watch } from 'vue'
 import './custom.css'
 
+// 全局组件
+import TermCard from './components/TermCard.vue'
+import ProgressBadge from './components/ProgressBadge.vue'
+import QuizBlock from './components/QuizBlock.vue'
+import InteractiveLesson from './components/InteractiveLesson.vue'
+import LessonStep from './components/LessonStep.vue'
+
 function getMermaidThemeVariables() {
   const styles = getComputedStyle(document.documentElement)
 
@@ -94,6 +101,14 @@ function enhanceContent() {
 
 export default {
   extends: DefaultTheme,
+  enhanceApp({ app }) {
+    // 注册全局组件，可在任意 .md 中直接使用
+    app.component('TermCard', TermCard)
+    app.component('ProgressBadge', ProgressBadge)
+    app.component('QuizBlock', QuizBlock)
+    app.component('InteractiveLesson', InteractiveLesson)
+    app.component('LessonStep', LessonStep)
+  },
   setup() {
     if (!inBrowser) return
 

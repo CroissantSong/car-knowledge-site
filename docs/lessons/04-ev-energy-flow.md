@@ -175,3 +175,11 @@ C. DC-DC 转换器从高压电池取电
 D. 直接由高压电池降压供电，没有 12V 系统
 
 > **答案：C**。电动车没有发动机，无法用传统发电机，12V 系统（仪表/灯光/ECU 等）通过 DC-DC 转换器从高压电池取电。12V 小电池仅作缓冲和备份。
+
+---
+
+<div style="text-align:center; margin-top:24px; padding:16px; background:var(--vp-c-brand-soft); border-radius:10px;">
+
+<ProgressBadge path="/lessons/04-ev-energy-flow" mode="checkbox" />
+
+</div>

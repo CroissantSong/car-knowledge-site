@@ -132,3 +132,11 @@ C. 减少变速箱齿轮数量
 D. 替代差速器功能
 
 > **答案：B**。液力变矩器通过液体传递动力，允许泵轮（发动机侧）和涡轮（变速箱侧）以不同速度旋转，是 AT 变速箱能实现「踩刹车挂 D 挡不熄火」的关键。
+
+---
+
+<div style="text-align:center; margin-top:24px; padding:16px; background:var(--vp-c-brand-soft); border-radius:10px;">
+
+<ProgressBadge path="/lessons/02-fuel-to-wheel" mode="checkbox" />
+
+</div>

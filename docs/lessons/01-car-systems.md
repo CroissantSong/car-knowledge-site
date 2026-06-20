@@ -119,3 +119,11 @@ C. 车身结构完全不同
 D. 内饰完全不同
 
 > **答案：B**。电动车用电机+减速器替代了发动机+变速箱，动力系统简化但新增了高压电气架构和更复杂的热管理系统。
+
+---
+
+<div style="text-align:center; margin-top:24px; padding:16px; background:var(--vp-c-brand-soft); border-radius:10px;">
+
+<ProgressBadge path="/lessons/01-car-systems" mode="checkbox" />
+
+</div>

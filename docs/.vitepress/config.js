@@ -67,6 +67,8 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '30天地图', link: '/path' },
+      { text: '旗舰课', link: '/lessons/' },
+      { text: '术语表', link: '/glossary' },
       { text: '六层路径', link: '/#六层学习路径' },
       { text: '核心笔记', link: '/core-notes/' },
       { text: '关于', link: '/#关于本站' }
@@ -145,6 +147,7 @@ export default defineConfig({
           text: '旗舰交互课 🎓',
           collapsed: false,
           items: [
+            { text: '总览', link: '/lessons/' },
             { text: '① 整车系统组成', link: '/lessons/01-car-systems' },
             { text: '② 燃油→轮端驱动力', link: '/lessons/02-fuel-to-wheel' },
             { text: '③ 刹车力/液压传递', link: '/lessons/03-braking-force' },

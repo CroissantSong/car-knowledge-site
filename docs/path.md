@@ -3,6 +3,13 @@
 > **面向非汽车专业应届生**：用一辆车贯穿全站，按入职前 30 天可跟随的节奏，把六层 54 个知识点编成每日学习任务。
 > 每天约 1–2 小时，周末可集中补齐。学完后你能在车企会议上听懂九成技术讨论。
 
+::: tip 📊 我的学习进度
+
+整体进度：<ProgressBadge :path="['/guide/', '/guide/classification', '/guide/body-chassis', '/mechanics/', '/mechanics/engine', '/mechanics/transmission-suspension', '/traditional/', '/traditional/fuel-system', '/traditional/braking-steering', '/new-energy/', '/new-energy/battery-motor', '/new-energy/hybrid-range-extender', '/smart-car/', '/smart-car/adas', '/smart-car/v2x-ota', '/industry/', '/industry/terminology', '/industry/roles']" mode="bar" />
+
+每页底部有「标记完成」按钮，勾选后进度会自动保存到浏览器。
+:::
+
 ## 总体路线
 
 ```mermaid

@@ -152,3 +152,11 @@ C. 真空助力器太重
 D. 真空助力器制动力不够
 
 > **答案：B**。真空助力器依赖发动机进气歧管的真空度，电动车没有发动机，无法持续产生真空，必须换用电助力（iBooster 等）。
+
+---
+
+<div style="text-align:center; margin-top:24px; padding:16px; background:var(--vp-c-brand-soft); border-radius:10px;">
+
+<ProgressBadge path="/lessons/03-braking-force" mode="checkbox" />
+
+</div>

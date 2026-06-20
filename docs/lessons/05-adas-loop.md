@@ -191,3 +191,11 @@ C. 制动力更大
 D. 不需要制动液
 
 > **答案：B**。线控制动（如 iBooster）由电信号控制建压，不需要人踩踏板就能主动制动——这是 AEB 自动紧急制动、ACC 自适应巡航等 L2+ 功能的硬件基础。
+
+---
+
+<div style="text-align:center; margin-top:24px; padding:16px; background:var(--vp-c-brand-soft); border-radius:10px;">
+
+<ProgressBadge path="/lessons/05-adas-loop" mode="checkbox" />
+
+</div>
