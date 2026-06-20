@@ -119,9 +119,8 @@ body {
 .VPHero .image-bg {
   width: 420px;
   height: 300px;
-  background: radial-gradient(circle at 38% 36%, rgba(20, 184, 166, 0.22), transparent 58%),
-    radial-gradient(circle at 72% 70%, rgba(217, 119, 6, 0.16), transparent 45%);
-  filter: blur(18px);
+  background: transparent;
+  filter: none;
 }
 
 .VPHero .image-src {

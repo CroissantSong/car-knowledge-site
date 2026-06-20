@@ -50,6 +50,7 @@ function enhanceCourseBlocks() {
     if (!strong) return
 
     const label = strong.textContent.replace(/\s/g, '')
+    const remainingText = block.textContent.replace(strong.textContent, '').replace(/[：:]/g, '').trim()
     let type = ''
 
     if (label.includes('场景化问题')) type = 'scenario'
@@ -58,7 +59,7 @@ function enhanceCourseBlocks() {
     if (label.includes('车企') || label.includes('工作场景')) type = 'work'
     if (label.includes('小测')) type = 'quiz'
 
-    if (!type) return
+    if (!type || !remainingText) return
 
     block.dataset.courseBlock = type
     block.classList.add('course-block', `course-block-${type}`)
