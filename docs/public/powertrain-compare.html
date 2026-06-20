@@ -106,17 +106,24 @@ h1 {
   box-shadow: 0 10px 26px rgba(37, 99, 235, 0.18);
 }
 
+body[data-mode="drive"] .mode-btn[data-mode="drive"],
+body[data-mode="cruise"] .mode-btn[data-mode="cruise"],
+body[data-mode="brake"] .mode-btn[data-mode="brake"] {
+  transform: scale(1.05);
+}
+
 .mode-summary {
   max-width: 780px;
   min-height: 58px;
   margin: 0 auto 22px;
-  padding: 11px 14px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
   background: var(--surface);
   color: var(--muted);
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .mode-summary strong {
@@ -132,17 +139,21 @@ h1 {
 }
 
 body[data-mode="drive"] .mode-summary {
-  border-color: color-mix(in srgb, var(--blue) 34%, var(--border));
+  border-color: color-mix(in srgb, var(--blue) 50%, var(--border));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 12%, var(--surface)), var(--surface));
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.12);
 }
 
 body[data-mode="cruise"] .mode-summary {
-  border-color: color-mix(in srgb, var(--teal) 40%, var(--border));
-  background: linear-gradient(135deg, color-mix(in srgb, var(--teal) 10%, var(--surface)), var(--surface));
+  border-color: color-mix(in srgb, var(--teal) 55%, var(--border));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--teal) 14%, var(--surface)), var(--surface));
+  box-shadow: 0 12px 32px rgba(15, 118, 110, 0.12);
 }
 
 body[data-mode="brake"] .mode-summary {
-  border-color: color-mix(in srgb, var(--regen) 42%, var(--border));
-  background: linear-gradient(135deg, color-mix(in srgb, var(--regen) 10%, var(--surface)), var(--surface));
+  border-color: color-mix(in srgb, var(--regen) 55%, var(--border));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--regen) 14%, var(--surface)), var(--surface));
+  box-shadow: 0 12px 32px rgba(21, 128, 61, 0.12);
 }
 
 .lanes {
@@ -156,11 +167,17 @@ body[data-mode="brake"] .mode-summary {
 .lane {
   position: relative;
   padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
   background: var(--surface);
   box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
+
+/* Mode-specific lane borders */
+body[data-mode="drive"] .lane { border-color: color-mix(in srgb, var(--blue) 25%, var(--border)); }
+body[data-mode="cruise"] .lane { border-color: color-mix(in srgb, var(--teal) 30%, var(--border)); }
+body[data-mode="brake"] .lane { border-color: color-mix(in srgb, var(--regen) 30%, var(--border)); }
 
 .lane::before {
   content: "";
@@ -276,29 +293,60 @@ body[data-mode="brake"] .mode-summary {
 .flow-dot.regen { background: var(--regen); box-shadow: 0 0 8px var(--regen); animation-direction: reverse; }
 .flow-dot.heat { background: var(--heat); box-shadow: 0 0 8px var(--heat); }
 
+/* Drive mode: bold, fast, high energy */
+body[data-mode="drive"] .arrow-inner {
+  width: 6px;
+  opacity: 1;
+}
+
+body[data-mode="drive"] .flow-dot {
+  width: 10px;
+  height: 10px;
+  left: -3px;
+  animation-duration: 0.8s;
+}
+
+body[data-mode="drive"] .node {
+  border-width: 2px;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
+}
+
+body[data-mode="drive"] .lane-ice .node { box-shadow: 0 6px 18px rgba(217, 119, 6, 0.1); }
+body[data-mode="drive"] .lane-bev .node { box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1); }
+
+/* Cruise mode: thin, slow, efficient */
 body[data-mode="cruise"] .arrow-inner {
-  width: 3px;
-  opacity: 0.62;
+  width: 2px;
+  opacity: 0.55;
 }
 
 body[data-mode="cruise"] .flow-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   left: -1.5px;
-  opacity: 0.72;
-  animation-duration: 2.4s;
+  opacity: 0.6;
+  animation-duration: 3s;
 }
 
 body[data-mode="cruise"] .node {
-  background: color-mix(in srgb, var(--surface-strong) 92%, var(--teal) 8%);
+  background: color-mix(in srgb, var(--surface-strong) 94%, var(--teal) 6%);
+  border-color: color-mix(in srgb, var(--teal) 20%, var(--border));
 }
 
+/* Brake mode: dashed, reverse, recovery */
 body[data-mode="brake"] .arrow-inner {
   width: 5px;
+  background: repeating-linear-gradient(to bottom, var(--regen) 0px, var(--regen) 6px, transparent 6px, transparent 12px) !important;
 }
 
 body[data-mode="brake"] .flow-dot {
-  animation-duration: 1.6s;
+  animation-duration: 1.4s;
+  animation-direction: reverse;
+}
+
+body[data-mode="brake"] .lane:not(.lane-ice) .node {
+  border-color: color-mix(in srgb, var(--regen) 30%, var(--border));
+  background: color-mix(in srgb, var(--surface-strong) 92%, var(--regen) 8%);
 }
 
 .tooltip {
@@ -557,7 +605,8 @@ const laneModeConclusions = {
 function renderModeSummary(mode) {
   const summary = document.getElementById('mode-summary');
   const copy = modeCopy[mode];
-  summary.innerHTML = `<strong>${copy.title}</strong><span>${copy.desc}</span>`;
+  const modeEmoji = mode === 'drive' ? '🚀' : mode === 'cruise' ? '🛣️' : '🔄';
+  summary.innerHTML = `<strong>${modeEmoji} ${copy.title}</strong><span>${copy.desc}</span>`;
 }
 
 function getModeArrowType(laneId, baseType, mode) {

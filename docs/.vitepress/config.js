@@ -81,7 +81,8 @@ export default defineConfig({
           items: [
             { text: '总览', link: '/guide/' },
             { text: '汽车分类与结构', link: '/guide/classification' },
-            { text: '车身与底盘', link: '/guide/body-chassis' }
+            { text: '车身与底盘', link: '/guide/body-chassis' },
+            { text: '交互组件演示', link: '/guide/components-demo' }
           ]
         }
       ],

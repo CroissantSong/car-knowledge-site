@@ -2,6 +2,8 @@ import DefaultTheme from 'vitepress/theme'
 import { inBrowser, useRoute } from 'vitepress'
 import { nextTick, watch } from 'vue'
 import './custom.css'
+import Quiz from './components/Quiz.vue'
+import TermInline from './components/TermInline.vue'
 
 function getMermaidThemeVariables() {
   const styles = getComputedStyle(document.documentElement)
@@ -94,6 +96,11 @@ function enhanceContent() {
 
 export default {
   extends: DefaultTheme,
+  enhanceApp({ app }) {
+    // 注册全局组件，供 .md 文件直接使用
+    app.component('Quiz', Quiz)
+    app.component('Term', TermInline)
+  },
   setup() {
     if (!inBrowser) return
 
