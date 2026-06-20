@@ -140,6 +140,20 @@ export default defineConfig({
           ]
         }
       ],
+      '/lessons/': [
+        {
+          text: '旗舰交互课 🎓',
+          collapsed: false,
+          items: [
+            { text: '① 整车系统组成', link: '/lessons/01-car-systems' },
+            { text: '② 燃油→轮端驱动力', link: '/lessons/02-fuel-to-wheel' },
+            { text: '③ 刹车力/液压传递', link: '/lessons/03-braking-force' },
+            { text: '④ 电动车高压能量流', link: '/lessons/04-ev-energy-flow' },
+            { text: '⑤ 智驾感知-决策-执行', link: '/lessons/05-adas-loop' },
+            { text: '⑥ 新人听懂术语', link: '/lessons/06-newcomer-terminology' }
+          ]
+        }
+      ],
       '/core-notes/': [
         {
           text: '核心笔记 📝',
