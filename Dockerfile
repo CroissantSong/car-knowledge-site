@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm ci || npm install
 COPY . .
 # 容器/隧道按根路径访问：把 base 改为 '/'（不影响仓库里的 GitHub Pages 配置）
-RUN sed -i "s#base:[[:space:]]*'/auto-tech-docs/'#base: '/'#" docs/.vitepress/config.js \
+RUN sed -i "s#base:[[:space:]]*'/car-knowledge-site/'#base: '/'#" docs/.vitepress/config.js \
  && npm run build
 
 FROM nginx:alpine

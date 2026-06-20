@@ -5,7 +5,7 @@ export default defineConfig({
   // GitHub Pages base path: 用仓库名，部署后改为实际的
   // 例如仓库叫 auto-tech-docs，就设为 '/auto-tech-docs/'
   // 本地预览时注释掉或用 '/'
-  base: '/auto-tech-docs/',
+  base: '/car-knowledge-site/',
 
   lang: 'zh-CN',
   title: '汽车技术通识',
