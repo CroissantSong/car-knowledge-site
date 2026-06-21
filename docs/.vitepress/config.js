@@ -87,6 +87,7 @@ export default defineConfig({
       { text: '30天地图', link: '/path' },
       { text: '岗位导航', link: '/roles-guide/' },
       { text: '旗舰课', link: '/lessons/' },
+      { text: '题库', link: '/quiz/' },
       { text: '术语表', link: '/glossary' },
       { text: '六层路径', link: '/#六层学习路径' },
       { text: '核心笔记', link: '/core-notes/' },
@@ -201,6 +202,26 @@ export default defineConfig({
         }
       ]
     },
+
+      '/quiz/': [
+        {
+          text: '练习题库 📝',
+          collapsed: false,
+          items: [
+            { text: '题库首页', link: '/quiz/' },
+            { text: '🚗 第一层：整车认知', link: '/quiz/guide' },
+            { text: '⚙️ 第二层：机械基础', link: '/quiz/mechanics' },
+            { text: '🔧 第三层：传统系统', link: '/quiz/traditional' },
+            { text: '⚡ 第四层：新能源', link: '/quiz/new-energy' },
+            { text: '🧠 第五层：智能汽车', link: '/quiz/smart-car' },
+            { text: '🏢 第六层：车企语境', link: '/quiz/industry' },
+            { text: '📋 产品/项目管理专项', link: '/quiz/role-pm' },
+            { text: '🛒 采购/供应链专项', link: '/quiz/role-procurement' },
+            { text: '🏭 制造/质量专项', link: '/quiz/role-manufacturing' },
+            { text: '🔬 测试/研发专项', link: '/quiz/role-testing' }
+          ]
+        }
+      ],
 
     // 全局侧边栏（首页等非特定路径时显示）
     sidebarMulti: true,
