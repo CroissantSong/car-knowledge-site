@@ -274,4 +274,45 @@ function retry() {
 .hint-leave-to {
   opacity: 0;
 }
+
+/* ── 移动端优化 ── */
+@media (max-width: 640px) {
+  .quiz-block {
+    padding: 16px;
+  }
+
+  .quiz-question {
+    font-size: 15px;
+  }
+
+  .quiz-option {
+    padding: 14px 16px;
+    min-height: 48px;
+  }
+
+  .quiz-option-marker {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .quiz-option-text {
+    font-size: 14px;
+  }
+
+  .quiz-btn {
+    padding: 10px 20px;
+    min-height: 44px;
+    font-size: 15px;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  .quiz-hint {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
 </style>

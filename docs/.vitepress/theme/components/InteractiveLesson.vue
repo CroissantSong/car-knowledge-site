@@ -147,4 +147,43 @@ provide('lessonId', props.lessonId)
   flex-direction: column;
   gap: 0;
 }
+
+/* ── 移动端优化 ── */
+@media (max-width: 640px) {
+  .interactive-lesson {
+    max-width: 100%;
+  }
+
+  .lesson-title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .lesson-desc {
+    font-size: 14px;
+  }
+
+  .lesson-meta {
+    gap: 8px;
+  }
+
+  .lesson-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .lesson-duration {
+    font-size: 12px;
+  }
+
+  .lesson-controls {
+    gap: 6px;
+  }
+
+  .lesson-ctrl-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-height: 36px;
+  }
+}
 </style>

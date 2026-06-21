@@ -205,4 +205,40 @@ const typeInfo = computed(() => typeLabels[props.type] || null)
 .dark .step-body {
   background: var(--auto-card, rgba(20, 29, 44, 0.78));
 }
+
+/* ── 移动端优化 ── */
+@media (max-width: 640px) {
+  .step-header {
+    padding: 10px 12px;
+    gap: 10px;
+    min-height: 56px;
+  }
+
+  .step-number-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .step-number {
+    font-size: 14px;
+  }
+
+  .step-title-area {
+    gap: 6px;
+  }
+
+  .step-type-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .step-title {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .step-content-inner {
+    padding: 14px 16px;
+  }
+}
 </style>

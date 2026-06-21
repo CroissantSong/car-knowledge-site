@@ -337,12 +337,59 @@ const totalAll = computed(() => allTerms.value.length)
 
 /* Mobile responsive */
 @media (max-width: 640px) {
+  .glossary-filter {
+    margin: 16px 0;
+  }
+
+  .filter-header {
+    margin-bottom: 20px;
+  }
+
   .terms-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
+
   .search-input {
     font-size: 16px; /* Prevent zoom on iOS */
+    padding: 14px 40px 14px 42px;
+    min-height: 48px;
+  }
+
+  .term-item {
+    padding: 14px;
+  }
+
+  .term-abbr {
+    font-size: 16px;
+  }
+
+  .term-en {
+    font-size: 11px;
+  }
+
+  .term-zh {
+    font-size: 14px;
+  }
+
+  .term-note {
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .clear-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* 平板 */
+@media (min-width: 641px) and (max-width: 960px) {
+  .terms-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
 }
 </style>

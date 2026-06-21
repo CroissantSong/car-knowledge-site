@@ -165,4 +165,20 @@ function handleToggle() {
   font-weight: 600;
   color: var(--vp-c-text-1);
 }
+
+/* ── 移动端优化 ── */
+@media (max-width: 640px) {
+  .progress-checkbox {
+    padding: 8px 14px;
+    min-height: 44px;
+  }
+
+  .checkbox-mark {
+    font-size: 16px;
+  }
+
+  .checkbox-label {
+    font-size: 13px;
+  }
+}
 </style>

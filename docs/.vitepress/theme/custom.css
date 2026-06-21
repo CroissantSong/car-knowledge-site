@@ -663,6 +663,7 @@ body {
 
   .home-cta {
     width: 100%;
+    min-height: 48px;
   }
 
   .vp-doc {
@@ -673,6 +674,7 @@ body {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 
   .course-block {
@@ -682,6 +684,75 @@ body {
   .diagram-frame,
   .auto-diagram {
     padding: 12px;
+  }
+
+  /* 移动端 nav 紧凑 */
+  .VPNavBarMenuLink {
+    font-size: 13px;
+  }
+
+  /* 移动端搜索按钮更大 */
+  .VPNavBarSearch .DocSearch-Button {
+    min-height: 40px;
+  }
+
+  /* 移动端 diagram 横向滚动 */
+  .diagram-frame {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vp-mermaid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 移动端 iframe 横向滚动 */
+  .vp-doc iframe {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* 移动端 knowledge-figure */
+  .knowledge-figure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .knowledge-figure {
+    padding: 10px;
+  }
+
+  /* 移动端自定义块 */
+  .custom-block {
+    padding: 12px 14px;
+  }
+
+  /* 移动端 sidebar 更紧凑 */
+  .VPSidebarItem .text {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* 移动端 outline 更紧凑 */
+  .VPDocAsideOutline .outline-link {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  /* 移动端 path page */
+  .path-week table {
+    font-size: 13px;
+  }
+
+  /* 触控目标最小 44px */
+  .home-cta,
+  .quiz-option,
+  .quiz-btn,
+  .progress-checkbox,
+  .lesson-ctrl-btn,
+  .step-header {
+    min-height: 44px;
   }
 }
 
@@ -773,4 +844,52 @@ body {
 .knowledge-figure-grid img {
   aspect-ratio: 16 / 9;
   object-fit: contain;
+}
+
+/* ───────── 平板 (641-960px) ───────── */
+@media (min-width: 641px) and (max-width: 960px) {
+  .path-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .note-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-section h2 {
+    font-size: 28px;
+  }
+
+  .vp-doc table {
+    font-size: 14px;
+  }
+}
+
+/* ───────── 暗色模式移动端修正 ───────── */
+@media (max-width: 640px) {
+  .dark .term-sheet {
+    background: var(--auto-card-strong, #151e2c);
+  }
+
+  .dark .term-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ───────── 横屏手机 ───────── */
+@media (max-width: 960px) and (orientation: landscape) {
+  .VPHero {
+    padding-top: 32px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .VPHero .image-src {
+    max-width: min(360px, 40vw);
+  }
+
+  .diagram-frame,
+  .vp-mermaid {
+    max-height: 60vh;
+    overflow: auto;
+  }
 }
