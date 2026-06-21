@@ -182,7 +182,10 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '岗位导航', link: '/roles-guide/' },
-            { text: '产品/项目管理路径', link: '/roles-guide/pm-path' }
+            { text: '产品/项目管理路径', link: '/roles-guide/pm-path' },
+            { text: '采购/供应链路径', link: '/roles-guide/procurement-supply-chain-path' },
+            { text: '制造/质量路径', link: '/roles-guide/manufacturing-quality-path' },
+            { text: '测试/研发路径', link: '/roles-guide/testing-rd-path' }
           ]
         }
       ],
