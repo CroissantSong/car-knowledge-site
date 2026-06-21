@@ -38,7 +38,7 @@ export default defineConfig({
   },
   
   head: [
-    ['link', { rel: 'icon', href: '/auto-tech-docs/favicon.svg', type: 'image/svg+xml' }]
+    ['link', { rel: 'icon', href: '/car-knowledge-site/favicon.svg', type: 'image/svg+xml' }]
   ],
 
   themeConfig: {
