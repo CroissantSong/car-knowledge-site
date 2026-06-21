@@ -158,8 +158,8 @@ export function useProgress() {
  * 标准化路径：去掉 base 前缀、尾部斜杠、.html 后缀
  */
 function normalizePath(path) {
-  // 去掉 base 前缀 '/auto-tech-docs/'
-  let p = path.replace(/^\/auto-tech-docs\//, '/')
+  // 去掉 base 前缀 '/car-knowledge-site/'
+  let p = path.replace(/^\/car-knowledge-site\//, '/')
   // 去掉 .html 后缀
   p = p.replace(/\.html$/, '')
   // 去掉 index 尾部
