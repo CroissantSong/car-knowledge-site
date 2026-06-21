@@ -14,8 +14,8 @@ const tooltipStyle = ref({})
 
 const entry = computed(() => {
   const key = (props.term || '').toUpperCase()
-  // 尝试精确匹配，再尝试大小写不敏感
-  return glossary[key] || glossary[props.term] || null
+  // 先精确匹配（区分 SoC=System on Chip 与 SOC=State of Charge），再退回大小写不敏感
+  return glossary[props.term] || glossary[key] || null
 })
 
 const displayTerm = computed(() => props.term || '')
