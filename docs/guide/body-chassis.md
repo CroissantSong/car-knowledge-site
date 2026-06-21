@@ -171,9 +171,10 @@ flowchart LR
 
 **小测：** 为什么“轴距更长”通常有利于后排空间，但不必然代表整车更灵活？
 
-::: tip 配图提示
-建议配图：四大工艺流程图解、白车身结构图（标注材料分布）、底盘系统透视图。
-:::
+<figure class="knowledge-figure">
+  <img src="/body-chassis-process.svg" alt="车身冲压焊接涂装总装四大工艺、白车身材料分布和底盘合装示意图" loading="lazy">
+  <figcaption>图：冲压、焊接、涂装、总装四大工艺，以及白车身材料分布和底盘合装关系。本站自绘 SVG。</figcaption>
+</figure>
 ---
 
 ## 驱动形式：FWD / RWD / AWD
@@ -237,7 +238,7 @@ flowchart LR
 
 **小测**：平台化开发的最大商业价值是什么？A. 让所有车看起来一样 B. 降低单车研发和制造成本 C. 提升最高车速 D. 让发动机排量更大
 
-::: tip 配图提示
-建议配图：四大工艺流程图解、白车身结构图（标注材料分布）、底盘系统透视图。
-:::
-
+<figure class="knowledge-figure">
+  <img src="/body-platform-modular.svg" alt="平台化开发中底盘、电池、前后桥模块共享并衍生多车型的示意图" loading="lazy">
+  <figcaption>图：平台化开发通过共享前舱、底盘、电气和动力模块，覆盖轿车、SUV、MPV 和性能版本。本站自绘 SVG。</figcaption>
+</figure>

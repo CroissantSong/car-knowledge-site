@@ -165,6 +165,7 @@
 
 **小测：** 为什么“更高算力芯片”不一定是智驾项目的最优方案？
 
-::: tip 配图提示
-建议配图：主机厂组织结构图、Tier1-Tier2-OEM关系图、GVDP里程碑图。
-:::
+<figure class="knowledge-figure">
+  <img src="/industry-collaboration-map.svg" alt="主机厂、Tier1、Tier2 和 GVDP 项目里程碑协作示意图" loading="lazy">
+  <figcaption>图：主机厂、Tier1、Tier2、内部职能与项目节点之间的协作关系。本站自绘 SVG。</figcaption>
+</figure>

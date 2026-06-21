@@ -123,6 +123,7 @@ A. 麦弗逊  B. 扭力梁  C. 双叉臂  D. 空气悬架
 
 见 [核心笔记：变速箱](/core-notes/transmission)
 
-::: tip 配图提示
-建议配图：离合器结构示意图（飞轮/离合器片/压盘）、麦弗逊悬架结构图、多连杆后悬架实拍图。
-:::
+<figure class="knowledge-figure">
+  <img src="/transmission-suspension.svg" alt="离合器剖面、麦弗逊悬架和多连杆后悬架结构示意图" loading="lazy">
+  <figcaption>图：离合器接合动力，麦弗逊支柱节省空间，多连杆用多根连杆精细控制车轮定位。本站自绘 SVG。</figcaption>
+</figure>

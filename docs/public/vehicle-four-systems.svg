@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-VIN-">
+  <title id="-VIN-">整车四大系统与 VIN 定位示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">整车四大系统</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">先按系统归属判断问题，再追到零部件、控制器和证据。</text>
+  <path d="M138 366 C176 280 275 238 450 236 H736 C822 236 904 286 955 356 L1012 366 C1040 370 1062 392 1062 420 V458 H116 V420 C116 392 126 376 138 366Z" fill="#f1f5f9" stroke="#152236" stroke-width="4"/>
+  <path d="M344 238 L410 150 H684 L752 238" fill="#dff5f1" stroke="#152236" stroke-width="4"/>
+  <path d="M428 166 H676 L724 236 H372Z" fill="#ffffff" stroke="#9fb0c6" stroke-width="2"/>
+  <rect x="140" y="360" width="292" height="42" rx="8" class="soft-teal"/>
+  <rect x="432" y="354" width="250" height="48" rx="8" class="soft-amber"/>
+  <rect x="682" y="356" width="270" height="46" rx="8" class="soft-blue"/>
+  <path d="M184 459 H1000" class="stroke"/>
+  <circle cx="294" cy="459" r="61" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="294" cy="459" r="28" fill="#e7edf4" stroke="#61728a" stroke-width="3"/>
+  <circle cx="868" cy="459" r="61" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="868" cy="459" r="28" fill="#e7edf4" stroke="#61728a" stroke-width="3"/>
+  <rect x="704" y="168" width="118" height="24" rx="4" fill="#fff" stroke="#dc2626" stroke-width="3"/>
+  <text x="763" y="185" class="label red" text-anchor="middle">VIN</text>
+  <path d="M822 180 C910 136 982 140 1030 176" class="arrow"/>
+  
+  <rect x="60" y="540" width="250" height="86" rx="8" class="panel"/>
+  <text x="185" y="574" class="section ink" text-anchor="middle">车身 Body</text>
+  <text y="606" class="small muted" text-anchor="middle"><tspan x="185" dy="0">乘员空间、碰撞结构</tspan><tspan x="185" dy="22">外观与内外饰</tspan></text>
+
+  
+  <rect x="334" y="540" width="250" height="86" rx="8" class="panel"/>
+  <text x="459" y="574" class="section ink" text-anchor="middle">底盘 Chassis</text>
+  <text y="606" class="small muted" text-anchor="middle"><tspan x="459" dy="0">悬架、转向、制动</tspan><tspan x="459" dy="22">让车稳、能转、能停</tspan></text>
+
+  
+  <rect x="608" y="540" width="250" height="86" rx="8" class="panel"/>
+  <text x="733" y="574" class="section ink" text-anchor="middle">动力 Powertrain</text>
+  <text y="606" class="small muted" text-anchor="middle"><tspan x="733" dy="0">发动机/电机与传动</tspan><tspan x="733" dy="22">把能量变成轮端力</tspan></text>
+
+  
+  <rect x="882" y="540" width="250" height="86" rx="8" class="panel"/>
+  <text x="1007" y="574" class="section ink" text-anchor="middle">电气电子 E/E</text>
+  <text y="606" class="small muted" text-anchor="middle"><tspan x="1007" dy="0">电源、线束、控制器</tspan><tspan x="1007" dy="22">供电、通信、控制</tspan></text>
+
+  <path d="M170 520 L240 458" class="thin"/>
+  <path d="M450 520 L460 404" class="thin"/>
+  <path d="M730 520 L750 405" class="thin"/>
+  <path d="M1000 520 L872 400" class="thin"/>
+
+</svg>

@@ -23,6 +23,7 @@
 - [发动机原理](/mechanics/engine) — 内燃机如何将燃料转化为动力
 - [传动与悬架](/mechanics/transmission-suspension) — 动力传递与舒适性的平衡
 
-::: tip 配图提示
-建议配图：四冲程动画截帧、直列vsV型发动机对比图。
-:::
+<figure class="knowledge-figure">
+  <img src="/engine-four-stroke.svg" alt="内燃机四冲程和常见发动机布置示意图" loading="lazy">
+  <figcaption>图：进气、压缩、做功、排气四个冲程中，只有做功冲程直接输出动力；直列、V 型和水平对置是常见气缸布置。本站自绘 SVG。</figcaption>
+</figure>

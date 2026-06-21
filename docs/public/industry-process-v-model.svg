@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="V-APQP-">
+  <title id="V-APQP-">V 模型、APQP 与工程变更流程示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">术语背后的交付流程</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">SOP、BOM、DVP、ECR/ECO 都是在管理需求、验证、物料和变更责任边界。</text>
+  <rect x="92" y="132" width="1016" height="420" rx="8" class="panel"/>
+  <path d="M190 190 L420 460 L600 460 L830 190" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <rect x="120" y="160" width="188" height="76" rx="8" class="panel-soft"/>
+  <text x="214" y="194" class="section ink" text-anchor="middle">需求定义</text>
+  <text y="226" class="small muted" text-anchor="middle"><tspan x="214" dy="0">目标、法规、场景</tspan></text>
+
+  
+  <rect x="268" y="298" width="188" height="76" rx="8" class="panel-soft"/>
+  <text x="362" y="332" class="section ink" text-anchor="middle">系统设计</text>
+  <text y="364" class="small muted" text-anchor="middle"><tspan x="362" dy="0">架构、接口、BOM</tspan></text>
+
+  
+  <rect x="372" y="430" width="188" height="76" rx="8" class="panel-soft"/>
+  <text x="466" y="464" class="section ink" text-anchor="middle">开发实现</text>
+  <text y="496" class="small muted" text-anchor="middle"><tspan x="466" dy="0">零件、软件、样车</tspan></text>
+
+  
+  <rect x="640" y="430" width="188" height="76" rx="8" class="panel-soft"/>
+  <text x="734" y="464" class="section ink" text-anchor="middle">单元验证</text>
+  <text y="496" class="small muted" text-anchor="middle"><tspan x="734" dy="0">台架、软件测试</tspan></text>
+
+  
+  <rect x="744" y="298" width="188" height="76" rx="8" class="panel-soft"/>
+  <text x="838" y="332" class="section ink" text-anchor="middle">系统验证</text>
+  <text y="364" class="small muted" text-anchor="middle"><tspan x="838" dy="0">DVP、路试、标定</tspan></text>
+
+  
+  <rect x="892" y="160" width="188" height="76" rx="8" class="panel-soft"/>
+  <text x="986" y="194" class="section ink" text-anchor="middle">量产发布</text>
+  <text y="226" class="small muted" text-anchor="middle"><tspan x="986" dy="0">SOP、质量闭环</tspan></text>
+
+  <rect x="176" y="584" width="848" height="54" rx="8" class="soft-amber" stroke="#d97706" stroke-width="2"/>
+  <text x="600" y="618" class="label ink" text-anchor="middle">APQP：计划和定义 → 产品设计 → 过程设计 → 验证 → 反馈改进</text>
+  <path d="M612 250 H722" class="arrow"/>
+  <text x="666" y="238" class="small muted" text-anchor="middle">ECR / ECO 变更闭环</text>
+
+</svg>

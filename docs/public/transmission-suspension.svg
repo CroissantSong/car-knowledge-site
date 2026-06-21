@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">离合器、传动与悬架结构示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">传动与悬架：动力传递 + 车轮导向</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">离合器控制动力接合，悬架控制车轮运动轨迹与车身姿态。</text>
+  <rect x="62" y="132" width="330" height="430" rx="8" class="panel"/>
+  <text x="227" y="172" class="section ink" text-anchor="middle">离合器剖面</text>
+  <circle cx="164" cy="326" r="70" class="soft-amber" stroke="#152236" stroke-width="4"/>
+  <circle cx="254" cy="326" r="48" class="soft-blue" stroke="#152236" stroke-width="4"/>
+  <rect x="292" y="290" width="48" height="72" rx="8" class="soft-slate" stroke="#152236" stroke-width="4"/>
+  <path d="M110 326 H340" class="stroke"/>
+  <text x="164" y="428" class="label ink" text-anchor="middle">飞轮</text>
+  <text x="254" y="428" class="label ink" text-anchor="middle">离合器片</text>
+  <text x="315" y="428" class="label ink" text-anchor="middle">压盘</text>
+  <rect x="436" y="132" width="330" height="430" rx="8" class="panel"/>
+  <text x="601" y="172" class="section ink" text-anchor="middle">麦弗逊悬架</text>
+  <path d="M610 216 L566 432" class="stroke"/>
+  <path d="M582 280 L638 292" class="thin"/>
+  <path d="M568 330 L626 342" class="thin"/>
+  <path d="M552 424 L486 472 H680" class="stroke"/>
+  <circle cx="680" cy="472" r="48" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <path d="M680 424 V520" class="thin"/>
+  <text x="612" y="556" class="small muted" text-anchor="middle">支柱兼导向，结构紧凑</text>
+  <rect x="810" y="132" width="330" height="430" rx="8" class="panel"/>
+  <text x="975" y="172" class="section ink" text-anchor="middle">多连杆后悬</text>
+  <circle cx="1042" cy="440" r="56" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <path d="M920 270 H1060" class="stroke"/>
+  <path d="M902 370 L1030 440 M910 455 L1040 440 M940 530 L1040 440" class="stroke"/>
+  <circle cx="920" cy="270" r="10" class="blue"/>
+  <circle cx="902" cy="370" r="10" class="green"/>
+  <circle cx="910" cy="455" r="10" class="amber"/>
+  <circle cx="940" cy="530" r="10" class="red"/>
+  <text x="975" y="556" class="small muted" text-anchor="middle">多根连杆分别控制定位参数</text>
+
+</svg>

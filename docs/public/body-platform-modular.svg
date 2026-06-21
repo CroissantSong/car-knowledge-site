@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="-">
+  <title id="-">平台化开发与底盘模块示意</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .panel{fill:#fff;stroke:#d7dee8;stroke-width:2}
+    .panel-soft{fill:#eef6f3;stroke:#9fd8d0;stroke-width:2}
+    .ink{fill:#152236}
+    .muted{fill:#526174}
+    .title{font:700 34px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .section{font:700 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .label{font:650 17px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .small{font:500 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .tiny{font:500 12px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    .stroke{fill:none;stroke:#152236;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#61728a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#2563eb;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    .teal{fill:#0f766e}.blue{fill:#2563eb}.amber{fill:#d97706}.green{fill:#15803d}.red{fill:#dc2626}.slate{fill:#475569}
+    .soft-teal{fill:#dff5f1}.soft-blue{fill:#e5edff}.soft-amber{fill:#fff1d7}.soft-green{fill:#e6f6ec}.soft-red{fill:#fee2e2}.soft-slate{fill:#e7edf4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+
+  <text x="60" y="64" class="title ink" text-anchor="start">平台化：共享底板，覆盖多车型</text>
+  <text x="60" y="96" class="small muted" text-anchor="start">平台不等于外观相同，而是前舱、底盘、电气和电池/动力模块共享。</text>
+  <rect x="165" y="334" width="870" height="82" rx="8" fill="#e7edf4" stroke="#152236" stroke-width="4"/>
+  <rect x="238" y="290" width="170" height="58" rx="8" class="soft-amber" stroke="#d97706" stroke-width="3"/>
+  <rect x="512" y="292" width="176" height="56" rx="8" class="soft-blue" stroke="#2563eb" stroke-width="3"/>
+  <rect x="782" y="290" width="178" height="58" rx="8" class="soft-green" stroke="#15803d" stroke-width="3"/>
+  <circle cx="290" cy="436" r="55" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <circle cx="902" cy="436" r="55" fill="#fff" stroke="#152236" stroke-width="4"/>
+  <text x="323" y="324" class="label ink" text-anchor="middle">前舱模块</text>
+  <text x="600" y="325" class="label ink" text-anchor="middle">电池/地板</text>
+  <text x="871" y="324" class="label ink" text-anchor="middle">后桥模块</text>
+  
+  <rect x="84" y="132" width="250" height="104" rx="8" class="panel"/>
+  <text x="209" y="166" class="section ink" text-anchor="middle">两厢/轿车</text>
+  <text y="198" class="small muted" text-anchor="middle"><tspan x="209" dy="0">短轴距、低车高</tspan><tspan x="209" dy="22">覆盖城市通勤</tspan></text>
+
+  
+  <rect x="366" y="132" width="250" height="104" rx="8" class="panel"/>
+  <text x="491" y="166" class="section ink" text-anchor="middle">SUV</text>
+  <text y="198" class="small muted" text-anchor="middle"><tspan x="491" dy="0">长行程悬架</tspan><tspan x="491" dy="22">更高离地间隙</tspan></text>
+
+  
+  <rect x="648" y="132" width="250" height="104" rx="8" class="panel"/>
+  <text x="773" y="166" class="section ink" text-anchor="middle">MPV</text>
+  <text y="198" class="small muted" text-anchor="middle"><tspan x="773" dy="0">长轴距、大空间</tspan><tspan x="773" dy="22">座椅与电气变化</tspan></text>
+
+  
+  <rect x="930" y="132" width="200" height="104" rx="8" class="panel"/>
+  <text x="1030" y="166" class="section ink" text-anchor="middle">性能版</text>
+  <text y="198" class="small muted" text-anchor="middle"><tspan x="1030" dy="0">双电机/四驱</tspan><tspan x="1030" dy="22">制动与冷却强化</tspan></text>
+
+  <path d="M210 238 L278 335" class="arrow"/>
+  <path d="M492 238 L545 335" class="arrow"/>
+  <path d="M774 238 L704 335" class="arrow"/>
+  <path d="M1030 238 L920 335" class="arrow"/>
+  <path d="M238 520 H970" class="arrow"/>
+  <text x="600" y="556" class="label slate" text-anchor="middle">研发摊销下降、供应链复用、验证经验迁移，但差异化也要保留</text>
+
+</svg>

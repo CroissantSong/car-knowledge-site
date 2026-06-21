@@ -57,7 +57,7 @@ timeline
 - [汽车分类与结构](/guide/classification) — 了解汽车的种类和基本构造
 - [车身与底盘](/guide/body-chassis) — 深入车身工艺和底盘系统
 
-::: tip 配图提示
-建议配图：整车结构分解图（爆炸图），标注四大系统。
-:::
-
+<figure class="knowledge-figure">
+  <img src="/vehicle-four-systems.svg" alt="整车四大系统和 VIN 位置示意图" loading="lazy">
+  <figcaption>图：整车可先拆成车身、底盘、动力总成、电气电子四大系统，再继续追到部件和控制器。本站自绘 SVG。</figcaption>
+</figure>
