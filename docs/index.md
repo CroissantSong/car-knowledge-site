@@ -103,6 +103,18 @@ features:
   | 第 4 周 | Day 22–30 | 看懂智能驾驶闭环、OTA、车企流程和岗位协作 | [智能汽车](./smart-car/) · [车企语境](./industry/) |
 </section>
 
+<section class="home-section note-strip" id="岗位导航">
+  <div class="home-section-head">
+    <p class="home-section-label">按岗位学</p>
+    <h2>岗位通识导航</h2>
+    <p>产品、采购、制造、质量、测试 — 不同岗位的重点不一样。按岗位锁定你的必修知识点，不走弯路。</p>
+  </div>
+  <div class="home-cta-row">
+    <a class="home-cta primary" href="./roles-guide/">查看岗位导航</a>
+    <a class="home-cta" href="./roles-guide/pm-path">产品/项目管理路径</a>
+  </div>
+</section>
+
 <section class="home-section note-strip">
   <div class="home-section-head">
     <p class="home-section-label">高频概念</p>

@@ -67,6 +67,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '30天地图', link: '/path' },
+      { text: '岗位导航', link: '/roles-guide/' },
       { text: '旗舰课', link: '/lessons/' },
       { text: '术语表', link: '/glossary' },
       { text: '六层路径', link: '/#六层学习路径' },
@@ -154,6 +155,16 @@ export default defineConfig({
             { text: '④ 电动车高压能量流', link: '/lessons/04-ev-energy-flow' },
             { text: '⑤ 智驾感知-决策-执行', link: '/lessons/05-adas-loop' },
             { text: '⑥ 新人听懂术语', link: '/lessons/06-newcomer-terminology' }
+          ]
+        }
+      ],
+      '/roles-guide/': [
+        {
+          text: '岗位通识 🧭',
+          collapsed: false,
+          items: [
+            { text: '岗位导航', link: '/roles-guide/' },
+            { text: '产品/项目管理路径', link: '/roles-guide/pm-path' }
           ]
         }
       ],
