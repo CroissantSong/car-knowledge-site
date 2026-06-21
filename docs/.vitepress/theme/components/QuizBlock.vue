@@ -43,10 +43,13 @@ function retry() {
   <div class="quiz-block" :class="{ submitted, correct: isCorrect, wrong: submitted && !isCorrect }">
     <div class="quiz-question">{{ question }}</div>
 
-    <div class="quiz-options">
+    <div class="quiz-options" role="radiogroup" :aria-label="question">
       <button
         v-for="(opt, i) in options"
         :key="i"
+        role="radio"
+        :aria-checked="selected === i"
+        :aria-disabled="submitted"
         class="quiz-option"
         :class="{
           selected: selected === i,
@@ -72,7 +75,7 @@ function retry() {
     </div>
 
     <Transition name="hint">
-      <div v-if="showHint" class="quiz-hint" :class="{ 'hint-correct': isCorrect, 'hint-wrong': !isCorrect }">
+      <div v-if="showHint" class="quiz-hint" role="alert" aria-live="polite" :class="{ 'hint-correct': isCorrect, 'hint-wrong': !isCorrect }">
         <span class="hint-icon">{{ isCorrect ? '🎉' : '💡' }}</span>
         <span>{{ isCorrect ? correctHint : wrongHint }}</span>
       </div>

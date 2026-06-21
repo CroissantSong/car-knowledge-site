@@ -51,7 +51,7 @@ function handleToggle() {
   </span>
 
   <!-- 进度条模式（用于层级/多页面） -->
-  <div v-else-if="mode === 'bar'" class="progress-bar-wrap">
+  <div v-else-if="mode === 'bar'" class="progress-bar-wrap" role="progressbar" :aria-valuenow="progressPercent" aria-valuemin="0" aria-valuemax="100" :aria-label="'进度: ' + progressPercent + '%'">
     <div class="progress-bar-track">
       <div class="progress-bar-fill" :style="{ width: progressPercent + '%' }"></div>
     </div>
@@ -61,7 +61,7 @@ function handleToggle() {
   </div>
 
   <!-- 复选框模式（用于单页标记） -->
-  <label v-else-if="mode === 'checkbox'" class="progress-checkbox" :class="{ checked: singleCompleted }">
+  <label v-else-if="mode === 'checkbox'" class="progress-checkbox" :aria-label="singleCompleted ? '已标记完成' : '标记为完成'" :class="{ checked: singleCompleted }">
     <input type="checkbox" :checked="singleCompleted" @change="handleToggle" />
     <span class="checkbox-mark">{{ singleCompleted ? '✅' : '⬜' }}</span>
     <span v-if="showLabel" class="checkbox-label">{{ singleCompleted ? '已学完' : '标记完成' }}</span>

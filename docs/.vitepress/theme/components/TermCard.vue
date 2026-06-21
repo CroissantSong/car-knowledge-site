@@ -64,6 +64,15 @@ function toggle() {
   }
 }
 
+function handleKeydown(e) {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault()
+    toggle()
+  } else if (e.key === "Escape") {
+    hide()
+  }
+}
+
 // 点击外部关闭
 function handleClickOutside(e) {
   if (containerRef.value && !containerRef.value.contains(e.target)) {
@@ -92,14 +101,19 @@ onUnmounted(() => {
     ref="containerRef"
     class="term-card"
     :class="{ 'has-entry': !!entry }"
+    tabindex="0"
+    role="button"
+    :aria-expanded="visible"
+    :aria-label="`术语: ${displayTerm}${entry ? '，点击查看解释' : ''}`"
     @mouseenter="show"
     @mouseleave="hide"
     @click.stop="toggle"
+    @keydown="handleKeydown"
   >
     <span class="term-text">
       <slot>{{ displayTerm }}</slot>
     </span>
-    <span class="term-marker">?</span>
+    <span class="term-marker" aria-hidden="true">?</span>
 
     <Teleport to="body">
       <Transition name="term-tooltip">
@@ -107,6 +121,7 @@ onUnmounted(() => {
           v-if="visible && entry"
           ref="tooltipRef"
           class="term-tooltip"
+          role="tooltip"
           :style="tooltipStyle"
           @mouseenter="show"
           @mouseleave="hide"

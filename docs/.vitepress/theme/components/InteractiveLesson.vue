@@ -54,9 +54,9 @@ provide('lessonId', props.lessonId)
       </div>
       <h1 class="lesson-title">{{ title }}</h1>
       <p v-if="description" class="lesson-desc">{{ description }}</p>
-      <div class="lesson-controls">
-        <button class="lesson-ctrl-btn" @click="expandAll">全部展开</button>
-        <button class="lesson-ctrl-btn" @click="collapseAll">全部收起</button>
+      <div class="lesson-controls" role="group" aria-label="课程操作">
+        <button class="lesson-ctrl-btn" @click="expandAll" aria-label="全部展开课程步骤">全部展开</button>
+        <button class="lesson-ctrl-btn" @click="collapseAll" aria-label="全部收起课程步骤">全部收起</button>
       </div>
     </header>
 

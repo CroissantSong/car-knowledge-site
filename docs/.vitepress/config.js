@@ -5,7 +5,25 @@ export default defineConfig({
   // GitHub Pages base path: 用仓库名，部署后改为实际的
   // 例如仓库叫 auto-tech-docs，就设为 '/auto-tech-docs/'
   // 本地预览时注释掉或用 '/'
-  base: '/car-knowledge-site/',
+  base: '/car-knowledge-site/',  // Vite 构建优化：将 mermaid/katex 等重型依赖拆为独立按需 chunk
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 3200,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/mermaid')) {
+              return 'mermaid'
+            }
+            if (id.includes('node_modules/katex')) {
+              return 'katex'
+            }
+          }
+        }
+      }
+    }
+  },
+
 
   lang: 'zh-CN',
   title: '汽车技术通识',

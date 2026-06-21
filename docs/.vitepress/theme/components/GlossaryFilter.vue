@@ -95,7 +95,7 @@ const totalAll = computed(() => allTerms.value.length)
           ×
         </button>
       </div>
-      <div class="filter-stats">
+      <div class="filter-stats" role="status" aria-live="polite" aria-atomic="true">
         <span v-if="searchQuery">
           找到 <strong>{{ totalFiltered }}</strong> / {{ totalAll }} 个术语
         </span>
@@ -105,7 +105,7 @@ const totalAll = computed(() => allTerms.value.length)
       </div>
     </div>
 
-    <div v-if="filteredTerms.length === 0" class="no-results">
+    <div v-if="filteredTerms.length === 0" class="no-results" role="status" aria-live="polite">
       <p>没有找到匹配的术语，请尝试其他关键词。</p>
     </div>
 

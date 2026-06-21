@@ -39,22 +39,22 @@ const typeInfo = computed(() => typeLabels[props.type] || null)
     </div>
 
     <!-- 步骤头部 -->
-    <button class="step-header" @click="toggle" :aria-expanded="expanded">
+    <button class="step-header" @click="toggle" :aria-expanded="expanded" :aria-controls="'step-content-' + step">
       <div class="step-number-wrap">
         <span class="step-number">{{ step }}</span>
       </div>
       <div class="step-title-area">
-        <span v-if="typeInfo" class="step-type-badge" :style="{ background: typeInfo.color }">
+        <span v-if="typeInfo" class="step-type-badge" aria-hidden="true" :style="{ background: typeInfo.color }">
           {{ typeInfo.icon }} {{ typeInfo.label }}
         </span>
         <span class="step-title">{{ title }}</span>
       </div>
-      <span class="step-chevron" :class="{ open: expanded }">›</span>
+      <span class="step-chevron" aria-hidden="true" :class="{ open: expanded }">›</span>
     </button>
 
     <!-- 步骤内容 -->
     <Transition name="step-content">
-      <div v-show="expanded" class="step-body">
+      <div :id="'step-content-' + step" v-show="expanded" class="step-body" role="region" :aria-label="title">
         <div class="step-content-inner">
           <slot />
         </div>
