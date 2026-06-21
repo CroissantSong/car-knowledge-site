@@ -27,10 +27,10 @@
 | 底盘工程 | 悬架、制动、转向、轮胎 |
 | 动力总成 | 发动机、变速箱、混动系统 |
 | 三电（新能源） | 电池、电机、电控 |
-| 电子电气 | 线束、ECU、网络架构 |
+| 电子电气 | 线束、<TermCard term="ECU">ECU</TermCard>、网络架构 |
 | 智能驾驶 | 感知、决策、控制 |
-| 智能座舱 | 中控/仪表、HMI、语音 |
-| NVH | 噪音/振动/声振粗糙度 |
+| 智能座舱 | 中控/仪表、<TermCard term="HMI">HMI</TermCard>、语音 |
+| <TermCard term="NVH">NVH</TermCard> | 噪音/振动/声振粗糙度 |
 | 安全 | 碰撞安全、行人保护 |
 
 ### 试制（Prototype）
@@ -79,9 +79,9 @@
 每个节点需要提交一系列文档和数据：
 
 - 设计数据（CAD 3D/2D）
-- BOM（物料清单）
-- DVP 报告（设计验证计划结果）
-- DFMEA/PFMEA
+- <TermCard term="BOM">BOM</TermCard>（物料清单）
+- <TermCard term="DVP">DVP</TermCard> 报告（设计验证计划结果）
+- <TermCard term="DFMEA">DFMEA</TermCard>/<TermCard term="PFMEA">PFMEA</TermCard>
 - 成本分析
 - 质量目标达成情况
 
@@ -94,8 +94,8 @@
 
 ## 新员工入门建议
 
-1. **熟悉 GVDP**：了解整车开发从 0 到 1 的全过程
-2. **掌握核心缩写**：SOP/EOP/DVP/BOM/PPAP 等是最常用的术语
+1. **熟悉 <TermCard term="GVDP">GVDP</TermCard>**：了解整车开发从 0 到 1 的全过程
+2. **掌握核心缩写**：<TermCard term="SOP">SOP</TermCard>/<TermCard term="EOP">EOP</TermCard>/<TermCard term="DVP">DVP</TermCard>/<TermCard term="BOM">BOM</TermCard>/<TermCard term="PPAP">PPAP</TermCard> 等是最常用的术语
 3. **理解上下游**：你的工作交付给谁？接收谁的工作？
 4. **多看实车**：拆车报告、对标分析是最好的学习材料
 
@@ -120,7 +120,7 @@
 
 **车企工作场景：** 新人要学会在会议中说清“我负责哪段链路、已有证据是什么、下一步需要谁支持”，而不是只说“可能是某某问题”。
 
-**小测：** 如果用户反馈 AEB 误触发，至少需要哪些专业一起看？
+**小测：** 如果用户反馈 <TermCard term="AEB">AEB</TermCard> 误触发，至少需要哪些专业一起看？
 
 ### 2. 供应链角色
 

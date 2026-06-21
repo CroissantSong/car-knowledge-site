@@ -31,7 +31,7 @@ flowchart TD
 
 | 层级 | 示例 | 新人速判法 |
 |------|------|-----------|
-| **整车级** | NVH、操稳、热平衡、碰撞安全 | 说整台车表现的词 |
+| **整车级** | <TermCard term="NVH">NVH</TermCard>、操稳、热平衡、碰撞安全 | 说整台车表现的词 |
 | **系统级** | 制动系统、转向系统、空调系统 | 说一整套功能的词 |
 | **子系统级** | 制动器、转向机、压缩机 | 说一个大部件的词 |
 | **零件级** | 制动卡钳、转向拉杆、冷凝器 | 说一个具体零件的词 |
@@ -51,11 +51,11 @@ flowchart TD
 | **VP** | Verification Prototype | ★★★★★ | 验证样车——第一轮造出来检查设计行不行的车，异响/装配问题最多 |
 | **TT** | Tooling Tryout | ★★★★ | 工装样车——用正式产线模具造的车，检验产线能力 |
 | **PP** | Pilot Production | ★★★★ | 试生产车——按量产节拍造的「演习车」，接近商品车状态 |
-| **SOP** | Start of Production | ★★★★★ | 量产开始——商品车正式下线，错过这个节点=延期 |
-| **EOP** | End of Production | ★★★ | 量产结束——车型停产 |
-| **DVP** | Design Verification Plan | ★★★★ | 设计验证计划——这个零件要做哪些试验才算合格 |
-| **ECR/ECO** | Engineering Change Request/Order | ★★★★ | 工程变更——改一个东西的正式流程 |
-| **BOM** | Bill of Materials | ★★★ | 物料清单——一台车所有零件的清单 |
+| **<TermCard term="SOP">SOP</TermCard>** | Start of Production | ★★★★★ | 量产开始——商品车正式下线，错过这个节点=延期 |
+| **<TermCard term="EOP">EOP</TermCard>** | End of Production | ★★★ | 量产结束——车型停产 |
+| **<TermCard term="DVP">DVP</TermCard>** | Design Verification Plan | ★★★★ | 设计验证计划——这个零件要做哪些试验才算合格 |
+| **<TermCard term="ECR">ECR</TermCard>/<TermCard term="ECO">ECO</TermCard>** | Engineering Change Request/Order | ★★★★ | 工程变更——改一个东西的正式流程 |
+| **<TermCard term="BOM">BOM</TermCard>** | Bill of Materials | ★★★ | 物料清单——一台车所有零件的清单 |
 
 > 💡 听到「这台 VP 车」立刻知道：这是早期验证样车，问题多是正常的——如果有人说「这个问题 PP 阶段必须关掉」，意思是量产前必须解决。
 
@@ -127,7 +127,7 @@ flowchart TD
 
 | 术语 | 英文 | 含义 |
 |------|------|------|
-| NVH | Noise, Vibration, Harshness | 噪音、振动、粗糙感——用户感知最直接的三个维度 |
+| <TermCard term="NVH">NVH</TermCard> | Noise, Vibration, Harshness | 噪音、振动、粗糙感——用户感知最直接的三个维度 |
 | 共振 | Resonance | 激励频率和零件固有频率吻合时振幅急剧放大 |
 | 频谱分析 | Spectrum Analysis | 把复杂的振动信号分解成不同频率，定位峰值频率 |
 | 啸叫 | Squeal | 高频制动噪音（1-16 kHz），像指甲刮黑板 |
@@ -142,7 +142,7 @@ flowchart TD
 | 耐久 | Durability | 反复使用后是否还能正常工作 |
 | TSB | Technical Service Bulletin | 给 4S 店的技术服务公告（批量问题的官方修理指南） |
 | 8D | 8 Disciplines | 问题解决的标准八个步骤 |
-| FMEA | Failure Mode and Effects Analysis | 事前分析「哪里会坏、坏了多严重、怎么防」 |
+| <TermCard term="FMEA">FMEA</TermCard> | Failure Mode and Effects Analysis | 事前分析「哪里会坏、坏了多严重、怎么防」 |
 
 ## 油电对比 / 生活类比
 

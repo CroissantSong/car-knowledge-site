@@ -5,6 +5,7 @@ import './custom.css'
 
 // 全局组件
 import TermCard from './components/TermCard.vue'
+import GlossaryFilter from './components/GlossaryFilter.vue'
 import ProgressBadge from './components/ProgressBadge.vue'
 import QuizBlock from './components/QuizBlock.vue'
 import InteractiveLesson from './components/InteractiveLesson.vue'
@@ -104,6 +105,7 @@ export default {
   enhanceApp({ app }) {
     // 注册全局组件，可在任意 .md 中直接使用
     app.component('TermCard', TermCard)
+    app.component('GlossaryFilter', GlossaryFilter)
     app.component('ProgressBadge', ProgressBadge)
     app.component('QuizBlock', QuizBlock)
     app.component('InteractiveLesson', InteractiveLesson)

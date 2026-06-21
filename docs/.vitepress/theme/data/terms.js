@@ -272,5 +272,40 @@ export const glossary = {
     en: 'China Compulsory Certification',
     zh: '中国强制认证（3C）',
     note: '在中国销售的汽车及零部件必须通过的强制认证。'
+  },
+  OBC: {
+    en: 'On-Board Charger',
+    zh: '车载充电机',
+    note: '将交流电整流为直流电并升压到电池电压的充电设备，交流慢充时使用。'
+  },
+  DCDC: {
+    en: 'DC-DC Converter',
+    zh: '直流转换器',
+    note: '将高压直流电（如 400V/800V）转换为 12V 低压直流电，为车载低压系统供电。'
+  },
+  PTC: {
+    en: 'Positive Temperature Coefficient',
+    zh: '正温度系数加热器',
+    note: '陶瓷加热元件，用于座舱采暖和电池加热，温度越高电阻越大。'
+  },
+  IGBT: {
+    en: 'Insulated Gate Bipolar Transistor',
+    zh: '绝缘栅双极晶体管',
+    note: '功率半导体器件，用于电机控制器的逆变器，400V 平台常用。'
+  },
+  EHB: {
+    en: 'Electro-Hydraulic Brake',
+    zh: '电液制动',
+    note: '线控制动系统，用高压蓄能器和电磁阀独立控制各轮制动压力。'
+  },
+  RPN: {
+    en: 'Risk Priority Number',
+    zh: '风险优先级数',
+    note: 'FMEA 中的风险评估指标，RPN = 严重度(S) × 发生度(O) × 检测度(D)。'
+  },
+  TSB: {
+    en: 'Technical Service Bulletin',
+    zh: '技术服务公告',
+    note: '给 4S 店的技术服务公告，批量问题的官方修理指南。'
   }
 }
