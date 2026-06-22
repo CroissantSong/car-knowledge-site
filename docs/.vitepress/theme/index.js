@@ -3,6 +3,9 @@ import { inBrowser, useRoute } from 'vitepress'
 import { nextTick, watch } from 'vue'
 import './custom.css'
 
+// 自定义布局（含反馈入口）
+import Layout from './Layout.vue'
+
 // 全局组件
 import TermCard from './components/TermCard.vue'
 import GlossaryFilter from './components/GlossaryFilter.vue'
@@ -11,6 +14,7 @@ import QuizBlock from './components/QuizBlock.vue'
 import InteractiveLesson from './components/InteractiveLesson.vue'
 import LessonStep from './components/LessonStep.vue'
 import ErrorBook from './components/ErrorBook.vue'
+import StudyRecommendations from './components/StudyRecommendations.vue'
 
 function getMermaidThemeVariables() {
   const styles = getComputedStyle(document.documentElement)
@@ -103,6 +107,7 @@ function enhanceContent() {
 
 export default {
   extends: DefaultTheme,
+  Layout,
   enhanceApp({ app }) {
     // 注册全局组件，可在任意 .md 中直接使用
     app.component('TermCard', TermCard)
@@ -112,6 +117,7 @@ export default {
     app.component('InteractiveLesson', InteractiveLesson)
     app.component('LessonStep', LessonStep)
     app.component('ErrorBook', ErrorBook)
+    app.component('StudyRecommendations', StudyRecommendations)
   },
   setup() {
     if (!inBrowser) return

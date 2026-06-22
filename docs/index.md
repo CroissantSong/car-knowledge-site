@@ -41,6 +41,15 @@ features:
   </div>
 </section>
 
+<section class="home-section" id="推荐复习">
+  <div class="home-section-head">
+    <p class="home-section-label">个性化推荐</p>
+    <h2>推荐复习 / 继续学习</h2>
+    <p>根据你的错题记录和学习进度，为你推荐下一步行动。</p>
+  </div>
+  <StudyRecommendations />
+</section>
+
 <section class="home-section" id="六层学习路径">
   <div class="home-section-head">
     <p class="home-section-label">六层路径</p>

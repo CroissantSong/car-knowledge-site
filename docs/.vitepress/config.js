@@ -158,7 +158,11 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
       { text: '术语表', link: '/glossary' },
       { text: '六层路径', link: '/#六层学习路径' },
       { text: '核心笔记', link: '/core-notes/' },
-      { text: '关于', link: '/#关于本站' }
+      { text: '关于', link: '/#关于本站' },
+      {
+        text: '💬 反馈',
+        link: 'https://github.com/CroissantSong/car-knowledge-site/issues'
+      }
     ],
 
     // 侧边栏
