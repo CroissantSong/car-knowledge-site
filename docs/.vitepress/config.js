@@ -264,11 +264,12 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
           items: [
             { text: '扭矩与马力', link: '/core-notes/torque-vs-hp' },
             { text: '变速箱', link: '/core-notes/transmission' },
-            { text: '差速器', link: '/core-notes/differential' }
+            { text: '差速器', link: '/core-notes/differential' },
+            { text: '混动架构深度对比', link: '/core-notes/hybrid-architecture' },
+            { text: '电池安全深度解析', link: '/core-notes/battery-safety' }
           ]
         }
-      ]
-    },
+      ],
 
       '/quiz/': [
         {
@@ -290,6 +291,8 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
           ]
         }
       ],
+
+    },
 
     // 全局侧边栏（首页等非特定路径时显示）
     sidebarMulti: true,
