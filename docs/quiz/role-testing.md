@@ -21,6 +21,7 @@ function typeLabel(type) {
 ## {{ i + 1 }}. {{ q.question }} <span style="font-size:0.75em;color:var(--vp-c-text-3)">[{{ typeLabel(q.type) }}]</span>
 
 <QuizBlock
+  :type="q.type"
   :question="q.question"
   :options="q.options"
   :correctHint="'✅ 正确！' + q.explanation"

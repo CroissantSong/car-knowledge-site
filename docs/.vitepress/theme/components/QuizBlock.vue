@@ -6,34 +6,70 @@ const props = defineProps({
   question: { type: String, required: true },
   /** 选项数组 [{ text, correct }] */
   options: { type: Array, required: true },
+  /** 题目类型：single(单选) / multi(多选) / judge(判断) */
+  type: { type: String, default: 'single' },
   /** 正确时的提示 */
   correctHint: { type: String, default: '答对了！' },
   /** 错误时的提示 */
   wrongHint: { type: String, default: '再想想哦~' }
 })
 
-const selected = ref(null)
+const isMulti = computed(() => props.type === 'multi')
+
+// 单选模式：单个索引；多选模式：Set<number>
+const selectedSingle = ref(null)
+const selectedMulti = ref(new Set())
 const submitted = ref(false)
 const showHint = ref(false)
 
+const selected = computed(() => isMulti.value ? selectedMulti.value : selectedSingle.value)
+
 const isCorrect = computed(() => {
-  if (selected.value === null) return false
-  return props.options[selected.value]?.correct === true
+  if (isMulti.value) {
+    // 多选：所有正确项都选中，且没有选中错误项
+    if (selectedMulti.value.size === 0) return false
+    const correctIndices = props.options
+      .map((opt, i) => opt.correct ? i : -1)
+      .filter(i => i !== -1)
+    const hasAllCorrect = correctIndices.every(i => selectedMulti.value.has(i))
+    const hasNoWrong = [...selectedMulti.value].every(i => props.options[i]?.correct === true)
+    return hasAllCorrect && hasNoWrong
+  } else {
+    // 单选/判断
+    if (selectedSingle.value === null) return false
+    return props.options[selectedSingle.value]?.correct === true
+  }
 })
 
 function selectOption(index) {
   if (submitted.value) return
-  selected.value = index
+  if (isMulti.value) {
+    const next = new Set(selectedMulti.value)
+    if (next.has(index)) {
+      next.delete(index)
+    } else {
+      next.add(index)
+    }
+    selectedMulti.value = next
+  } else {
+    selectedSingle.value = index
+  }
 }
 
+const hasSelection = computed(() => {
+  if (isMulti.value) return selectedMulti.value.size > 0
+  return selectedSingle.value !== null
+})
+
 function submit() {
-  if (selected.value === null) return
+  if (!hasSelection.value) return
   submitted.value = true
   showHint.value = true
 }
 
 function retry() {
-  selected.value = null
+  selectedSingle.value = null
+  selectedMulti.value = new Set()
   submitted.value = false
   showHint.value = false
 }
@@ -43,30 +79,30 @@ function retry() {
   <div class="quiz-block" :class="{ submitted, correct: isCorrect, wrong: submitted && !isCorrect }">
     <div class="quiz-question">{{ question }}</div>
 
-    <div class="quiz-options" role="radiogroup" :aria-label="question">
+    <div class="quiz-options" :role="isMulti ? 'group' : 'radiogroup'" :aria-label="question">
       <button
         v-for="(opt, i) in options"
         :key="i"
-        role="radio"
-        :aria-checked="selected === i"
+        :role="isMulti ? 'checkbox' : 'radio'"
+        :aria-checked="isMulti ? selectedMulti.has(i) : selectedSingle === i"
         :aria-disabled="submitted"
         class="quiz-option"
         :class="{
-          selected: selected === i,
+          selected: isMulti ? selectedMulti.has(i) : selectedSingle === i,
           'is-correct': submitted && opt.correct,
-          'is-wrong': submitted && selected === i && !opt.correct
+          'is-wrong': submitted && (isMulti ? selectedMulti.has(i) : selectedSingle === i) && !opt.correct
         }"
         @click="selectOption(i)"
       >
         <span class="quiz-option-marker">{{ String.fromCharCode(65 + i) }}</span>
         <span class="quiz-option-text">{{ opt.text }}</span>
         <span v-if="submitted && opt.correct" class="quiz-option-icon">✓</span>
-        <span v-if="submitted && selected === i && !opt.correct" class="quiz-option-icon">✗</span>
+        <span v-if="submitted && (isMulti ? selectedMulti.has(i) : selectedSingle === i) && !opt.correct" class="quiz-option-icon">✗</span>
       </button>
     </div>
 
     <div class="quiz-actions">
-      <button v-if="!submitted" class="quiz-btn quiz-btn-primary" :disabled="selected === null" @click="submit">
+      <button v-if="!submitted" class="quiz-btn quiz-btn-primary" :disabled="!hasSelection" @click="submit">
         提交答案
       </button>
       <button v-else class="quiz-btn quiz-btn-secondary" @click="retry">
