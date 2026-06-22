@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 
 const props = defineProps({
+  /** 题目唯一标识（用于错题本记录） */
+  id: { type: String, default: '' },
   /** 题目文本 */
   question: { type: String, required: true },
   /** 选项数组 [{ text, correct }] */
@@ -13,6 +15,8 @@ const props = defineProps({
   /** 错误时的提示 */
   wrongHint: { type: String, default: '再想想哦~' }
 })
+
+const emit = defineEmits(['result'])
 
 const isMulti = computed(() => props.type === 'multi')
 
@@ -65,6 +69,7 @@ function submit() {
   if (!hasSelection.value) return
   submitted.value = true
   showHint.value = true
+  emit('result', { id: props.id, correct: isCorrect.value })
 }
 
 function retry() {

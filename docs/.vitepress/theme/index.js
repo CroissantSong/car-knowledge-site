@@ -10,6 +10,7 @@ import ProgressBadge from './components/ProgressBadge.vue'
 import QuizBlock from './components/QuizBlock.vue'
 import InteractiveLesson from './components/InteractiveLesson.vue'
 import LessonStep from './components/LessonStep.vue'
+import ErrorBook from './components/ErrorBook.vue'
 
 function getMermaidThemeVariables() {
   const styles = getComputedStyle(document.documentElement)
@@ -110,6 +111,7 @@ export default {
     app.component('QuizBlock', QuizBlock)
     app.component('InteractiveLesson', InteractiveLesson)
     app.component('LessonStep', LessonStep)
+    app.component('ErrorBook', ErrorBook)
   },
   setup() {
     if (!inBrowser) return

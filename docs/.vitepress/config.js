@@ -1,5 +1,7 @@
 
 import { defineConfig } from 'vitepress'
+import { writeFileSync, readdirSync, statSync } from 'node:fs'
+import { resolve, join, relative } from 'node:path'
 
 export default defineConfig({
   // GitHub Pages base path: 用仓库名，部署后改为实际的
@@ -56,8 +58,73 @@ export default defineConfig({
   },
   
   head: [
-    ['link', { rel: 'icon', href: '/car-knowledge-site/favicon.svg', type: 'image/svg+xml' }]
+    ['link', { rel: 'icon', href: '/car-knowledge-site/favicon.svg', type: 'image/svg+xml' }],
+    ['meta', { name: 'description', content: '面向非汽车专业应届生的汽车技术通识学习网站，用30天建立车企入职前的整车技术地图。覆盖动力、底盘、新能源、智能驾驶和车企工作语境。' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: '汽车技术通识' }],
+    ['meta', { property: 'og:title', content: '汽车技术通识 — 面向非汽车专业新人的汽车学习路径' }],
+    ['meta', { property: 'og:description', content: '从一辆车出发，看懂结构、能量流、控制流和会议里的工程语言。30天从零建立车企入职前的整车技术地图。' }],
+    ['meta', { property: 'og:image', content: '/car-knowledge-site/hero-cutaway.png' }],
+    ['meta', { property: 'og:image:alt', content: '透明车身展示动力、底盘、电池和传感器系统' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '汽车技术通识 — 面向非汽车专业新人的汽车学习路径' }],
+    ['meta', { name: 'twitter:description', content: '从一辆车出发，看懂结构、能量流、控制流和会议里的工程语言。' }],
+    ['meta', { name: 'twitter:image', content: '/car-knowledge-site/hero-cutaway.png' }]
   ],
+
+  // 为每个 HTML 页面注入页面级 meta description
+  transformHtml(code, id) {
+    // 从页面 frontmatter 或内容提取 description
+    const ogImage = '/car-knowledge-site/hero-cutaway.png'
+    const siteName = '汽车技术通识'
+    // 注入 og:url（基于文件路径）
+    if (id.endsWith('.html')) {
+      const url = id.replace(/.*\.vitepress\/dist\//, '').replace(/index\.html$/, '')
+      const fullUrl = `https://croissantsong.github.io/car-knowledge-site/${url}`
+      const meta = `
+        <meta property="og:url" content="${fullUrl}" />
+        <link rel="canonical" href="${fullUrl}" />`
+      return code.replace('</head>', `${meta}\n  </head>`)
+    }
+    return code
+  },
+
+  // 构建结束后生成 sitemap.xml
+  buildEnd(siteConfig) {
+    const outDir = siteConfig.outDir
+    const base = '/car-knowledge-site/'
+    const siteUrl = 'https://croissantsong.github.io/car-knowledge-site'
+
+    function collectHtmlFiles(dir) {
+      const files = []
+      for (const entry of readdirSync(dir)) {
+        const fullPath = join(dir, entry)
+        const stat = statSync(fullPath)
+        if (stat.isDirectory()) {
+          files.push(...collectHtmlFiles(fullPath))
+        } else if (entry.endsWith('.html')) {
+          files.push(fullPath)
+        }
+      }
+      return files
+    }
+
+    const htmlFiles = collectHtmlFiles(outDir)
+    const urls = htmlFiles.map(f => {
+      const rel = relative(outDir, f)
+      const path = rel.replace(/\\/g, '/').replace(/index\.html$/, '').replace(/\.html$/, '')
+      return `${siteUrl}/${path}`
+    })
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
+</urlset>`
+
+    writeFileSync(join(outDir, 'sitemap.xml'), sitemap, 'utf-8')
+    console.log(`[sitemap] Generated sitemap.xml with ${urls.length} URLs`)
+  },
 
   themeConfig: {
     logo: '/favicon.svg',
@@ -218,7 +285,8 @@ export default defineConfig({
             { text: '📋 产品/项目管理专项', link: '/quiz/role-pm' },
             { text: '🛒 采购/供应链专项', link: '/quiz/role-procurement' },
             { text: '🏭 制造/质量专项', link: '/quiz/role-manufacturing' },
-            { text: '🔬 测试/研发专项', link: '/quiz/role-testing' }
+            { text: '🔬 测试/研发专项', link: '/quiz/role-testing' },
+            { text: '📕 错题复习', link: '/quiz/error-book' }
           ]
         }
       ],
