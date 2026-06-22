@@ -893,3 +893,136 @@ body {
     overflow: auto;
   }
 }
+
+/* ───────── 全局微动效 ───────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPFeature {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.VPFeature:nth-child(2) { animation-delay: 0.08s; }
+.VPFeature:nth-child(3) { animation-delay: 0.16s; }
+
+.path-card {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.path-card:nth-child(2) { animation-delay: 0.06s; }
+.path-card:nth-child(3) { animation-delay: 0.12s; }
+.path-card:nth-child(4) { animation-delay: 0.18s; }
+.path-card:nth-child(5) { animation-delay: 0.24s; }
+.path-card:nth-child(6) { animation-delay: 0.30s; }
+
+/* ───────── 滚动进度条 ───────── */
+.VPContent .content {
+  position: relative;
+}
+
+/* ───────── 改善链接可读性 ───────── */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.vp-doc a:hover {
+  text-decoration-color: var(--vp-c-brand-2);
+}
+
+/* ───────── 图片统一样式 ───────── */
+.vp-doc img {
+  border-radius: 8px;
+  border: 1px solid var(--auto-border);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* ───────── 代码块微调 ───────── */
+.vp-doc div[class*="language-"] {
+  border-radius: 10px;
+  border: 1px solid var(--auto-border);
+}
+
+/* ───────── 提示框样式增强 ───────── */
+.custom-block.tip {
+  border-left-width: 4px;
+}
+
+.custom-block.warning {
+  border-left: 4px solid var(--auto-accent);
+}
+
+.custom-block.danger {
+  border-left: 4px solid #dc2626;
+}
+
+/* ───────── 强调标签 ───────── */
+.vp-doc strong {
+  color: var(--auto-ink);
+  font-weight: 750;
+}
+
+/* ───────── 滚动条美化 ───────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--auto-border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
+}
+
+/* ───────── 选中文本样式 ───────── */
+::selection {
+  background: var(--vp-c-brand-soft);
+  color: var(--auto-ink);
+}
+
+/* ───────── 打印样式 ───────── */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .VPDocFooter,
+  .VPToTop,
+  .VPDocAside {
+    display: none !important;
+  }
+
+  .VPDoc {
+    padding: 0 !important;
+  }
+
+  .vp-doc {
+    max-width: 100% !important;
+  }
+
+  .vp-doc a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  .vp-doc a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: var(--vp-c-text-3);
+  }
+}

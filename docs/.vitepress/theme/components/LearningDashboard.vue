@@ -1,11 +1,18 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useErrorBook } from '../composables/useErrorBook.js'
 import { useProgress } from '../composables/useProgress.js'
 import StudyRecommendations from './StudyRecommendations.vue'
 
 const { getErrorQuestions, getErrorCount } = useErrorBook()
 const { isCompleted, isVisited, getLayerProgress, getLayerProgressDetail, resetProgress } = useProgress()
+
+// Loading state (brief, for localStorage hydration)
+const isReady = ref(false)
+onMounted(() => {
+  // Small delay to simulate hydration and let composables read localStorage
+  requestAnimationFrame(() => { isReady.value = true })
+})
 
 /**
  * 六层学习路径定义（与 StudyRecommendations 保持一致）
@@ -168,7 +175,6 @@ const ringStrokeDashoffset = computed(() =>
 )
 
 /* ── 重置确认 ── */
-import { ref } from 'vue'
 const showResetConfirm = ref(false)
 
 function handleReset() {
@@ -179,6 +185,24 @@ function handleReset() {
 
 <template>
   <div class="dashboard">
+    <!-- Loading skeleton -->
+    <div v-if="!isReady" class="dash-loading">
+      <div class="dash-skeleton-ring"></div>
+      <div class="dash-skeleton-stats">
+        <div class="dash-skeleton-card"></div>
+        <div class="dash-skeleton-card"></div>
+        <div class="dash-skeleton-card"></div>
+        <div class="dash-skeleton-card"></div>
+      </div>
+      <div class="dash-skeleton-layers">
+        <div class="dash-skeleton-layer"></div>
+        <div class="dash-skeleton-layer"></div>
+        <div class="dash-skeleton-layer"></div>
+      </div>
+    </div>
+
+    <!-- Main dashboard content -->
+    <template v-else>
     <!-- ═══ 顶部概览卡 ═══ -->
     <div class="dash-overview">
       <!-- 左侧：环形进度 -->
@@ -411,12 +435,70 @@ function handleReset() {
         </div>
       </div>
     </Teleport>
+    </template><!-- /v-else -->
   </div>
 </template>
 
 <style scoped>
 .dashboard {
   margin: 0;
+}
+
+/* ══════ Loading Skeleton ══════ */
+.dash-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dash-skeleton-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--vp-c-bg-soft) 25%, var(--vp-c-bg-alt) 50%, var(--vp-c-bg-soft) 75%);
+  background-size: 200% 100%;
+  animation: dash-shimmer 1.5s infinite;
+  margin: 0 auto 16px;
+}
+
+.dash-skeleton-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.dash-skeleton-card {
+  height: 72px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--vp-c-bg-soft) 25%, var(--vp-c-bg-alt) 50%, var(--vp-c-bg-soft) 75%);
+  background-size: 200% 100%;
+  animation: dash-shimmer 1.5s infinite;
+}
+
+.dash-skeleton-layers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.dash-skeleton-layer {
+  height: 180px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--vp-c-bg-soft) 25%, var(--vp-c-bg-alt) 50%, var(--vp-c-bg-soft) 75%);
+  background-size: 200% 100%;
+  animation: dash-shimmer 1.5s infinite;
+}
+
+@keyframes dash-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (max-width: 768px) {
+  .dash-skeleton-stats,
+  .dash-skeleton-layers {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ══════ 概览区 ══════ */

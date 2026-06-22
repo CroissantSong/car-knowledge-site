@@ -64,19 +64,22 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: '汽车技术通识' }],
     ['meta', { property: 'og:title', content: '汽车技术通识 — 面向非汽车专业新人的汽车学习路径' }],
     ['meta', { property: 'og:description', content: '从一辆车出发，看懂结构、能量流、控制流和会议里的工程语言。30天从零建立车企入职前的整车技术地图。' }],
-    ['meta', { property: 'og:image', content: 'https://croissantsong.github.io/car-knowledge-site/hero-cutaway.png' }],
+    ['meta', { property: 'og:image', content: 'https://croissantsong.github.io/car-knowledge-site/hero-cutaway-optimized.jpg' }],
     ['meta', { property: 'og:image:alt', content: '透明车身展示动力、底盘、电池和传感器系统' }],
+    ['meta', { property: 'og:image:type', content: 'image/jpeg' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '676' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:title', content: '汽车技术通识 — 面向非汽车专业新人的汽车学习路径' }],
     ['meta', { name: 'twitter:description', content: '从一辆车出发，看懂结构、能量流、控制流和会议里的工程语言。' }],
-    ['meta', { name: 'twitter:image', content: 'https://croissantsong.github.io/car-knowledge-site/hero-cutaway.png' }]
+    ['meta', { name: 'twitter:image', content: 'https://croissantsong.github.io/car-knowledge-site/hero-cutaway-optimized.jpg' }]
   ],
 
   // 为每个 HTML 页面注入页面级 meta description
   transformHtml(code, id) {
     // 从页面 frontmatter 或内容提取 description
-    const ogImage = '/car-knowledge-site/hero-cutaway.png'
+    const ogImage = '/car-knowledge-site/hero-cutaway-optimized.jpg'
     const siteName = '汽车技术通识'
     // 注入 og:url（基于文件路径）
     if (id.endsWith('.html')) {

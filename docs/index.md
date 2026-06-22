@@ -2,18 +2,18 @@
 layout: home
 
 hero:
-  name: "面向非汽车专业新人的汽车技术通识"
-  text: "用 30 天建立车企入职前的整车技术地图"
-  tagline: 从一辆车出发，看懂结构、能量流、控制流和会议里的工程语言。
+  name: "汽车技术通识"
+  text: "30天，从零看懂一辆车的全部秘密"
+  tagline: 不是工程师也能听懂的动力总成、底盘悬架、电池电机和智能驾驶。专为即将入职车企的你设计，用场景和图示代替公式，用真实会议语言代替教科书。
   image:
-    src: /hero-cutaway.png
+    src: /hero-cutaway-optimized.jpg
     alt: 透明车身展示动力、底盘、电池和传感器系统
   actions:
     - theme: brand
-      text: 从这里开始
+      text: 🚀 立即开始学习
       link: /guide/
     - theme: alt
-      text: 30天学习地图
+      text: 📋 查看30天地图
       link: /#30天学习地图
 
 features:
