@@ -258,7 +258,12 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
             { text: '产品/项目管理路径', link: '/roles-guide/pm-path' },
             { text: '采购/供应链路径', link: '/roles-guide/procurement-supply-chain-path' },
             { text: '制造/质量路径', link: '/roles-guide/manufacturing-quality-path' },
-            { text: '测试/研发路径', link: '/roles-guide/testing-rd-path' }
+            { text: '测试/研发路径', link: '/roles-guide/testing-rd-path' },
+            { text: '---- 学习计划 ----', link: '/roles-guide/pm-plan' },
+            { text: '📋 PM 学习计划', link: '/roles-guide/pm-plan' },
+            { text: '🛒 采购学习计划', link: '/roles-guide/procurement-supply-chain-plan' },
+            { text: '🏭 制造学习计划', link: '/roles-guide/manufacturing-quality-plan' },
+            { text: '🔬 测试学习计划', link: '/roles-guide/testing-rd-plan' }
           ]
         }
       ],

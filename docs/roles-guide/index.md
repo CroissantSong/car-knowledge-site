@@ -113,9 +113,9 @@
 
 ## 当前状态
 
-| 岗位 | 精简路径 | 预计完成 |
-|------|:---:|:---:|
-| 产品/项目管理 | ✅ [已上线](./pm-path) | v0.4 |
-| 采购/供应链 | ✅ [已上线](./procurement-supply-chain-path) | v0.5 |
-| 制造/质量 | ✅ [已上线](./manufacturing-quality-path) | v0.5 |
-| 测试/研发 | ✅ [已上线](./testing-rd-path) | v0.5 |
+| 岗位 | 精简路径 | 学习计划 | 完成版本 |
+|------|:---:|:---:|:---:|
+| 产品/项目管理 | ✅ [通识路径](./pm-path) | 📋 [2周学习计划](./pm-plan) | v0.9 |
+| 采购/供应链 | ✅ [通识路径](./procurement-supply-chain-path) | 🛒 [2周学习计划](./procurement-supply-chain-plan) | v0.9 |
+| 制造/质量 | ✅ [通识路径](./manufacturing-quality-path) | 🏭 [2周学习计划](./manufacturing-quality-plan) | v0.9 |
+| 测试/研发 | ✅ [通识路径](./testing-rd-path) | 🔬 [2周学习计划](./testing-rd-plan) | v0.9 |
