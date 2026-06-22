@@ -270,7 +270,9 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
             { text: '变速箱', link: '/core-notes/transmission' },
             { text: '差速器', link: '/core-notes/differential' },
             { text: '混动架构深度对比', link: '/core-notes/hybrid-architecture' },
-            { text: '电池安全深度解析', link: '/core-notes/battery-safety' }
+            { text: '电池安全深度解析', link: '/core-notes/battery-safety' },
+            { text: '充电与补能体系', link: '/core-notes/charging-infrastructure' },
+            { text: '汽车热管理系统', link: '/core-notes/thermal-management' }
           ]
         }
       ],
