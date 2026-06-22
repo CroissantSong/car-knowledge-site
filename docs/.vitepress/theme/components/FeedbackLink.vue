@@ -1,6 +1,5 @@
 <script setup>
 const githubIssuesUrl = 'https://github.com/CroissantSong/car-knowledge-site/issues'
-const mailtoUrl = 'mailto:feedback@car-knowledge-site.example?subject=汽车技术通识网站反馈'
 </script>
 
 <template>
@@ -8,11 +7,7 @@ const mailtoUrl = 'mailto:feedback@car-knowledge-site.example?subject=汽车技�
     <span class="feedback-icon">💬</span>
     <span class="feedback-text">有问题或建议？</span>
     <a class="feedback-link" :href="githubIssuesUrl" target="_blank" rel="noopener">
-      GitHub 反馈
-    </a>
-    <span class="feedback-sep">·</span>
-    <a class="feedback-link" :href="mailtoUrl">
-      邮件反馈
+      前往 GitHub 提交反馈 →
     </a>
   </div>
 </template>
@@ -50,9 +45,7 @@ const mailtoUrl = 'mailto:feedback@car-knowledge-site.example?subject=汽车技�
   text-decoration: underline;
 }
 
-.feedback-sep {
-  color: var(--vp-c-text-3, #6c7a8d);
-}
+
 
 @media (max-width: 640px) {
   .feedback-bar {

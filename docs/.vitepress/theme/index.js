@@ -15,6 +15,7 @@ import InteractiveLesson from './components/InteractiveLesson.vue'
 import LessonStep from './components/LessonStep.vue'
 import ErrorBook from './components/ErrorBook.vue'
 import StudyRecommendations from './components/StudyRecommendations.vue'
+import LearningDashboard from './components/LearningDashboard.vue'
 
 function getMermaidThemeVariables() {
   const styles = getComputedStyle(document.documentElement)
@@ -118,6 +119,7 @@ export default {
     app.component('LessonStep', LessonStep)
     app.component('ErrorBook', ErrorBook)
     app.component('StudyRecommendations', StudyRecommendations)
+    app.component('LearningDashboard', LearningDashboard)
   },
   setup() {
     if (!inBrowser) return
