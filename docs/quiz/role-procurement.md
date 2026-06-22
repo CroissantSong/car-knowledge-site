@@ -27,6 +27,10 @@ function typeLabel(type) {
   :options="q.options"
   :correctHint="'✅ 正确！' + q.explanation"
   :wrongHint="'❌ 不对哦。解析：' + q.explanation"
+  :layer="q.layer"
+  :role="q.role"
+  :explanation="q.explanation"
+  :tags="q.tags"
 />
 
 </div>

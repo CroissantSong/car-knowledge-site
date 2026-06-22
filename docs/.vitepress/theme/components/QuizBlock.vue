@@ -1,5 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { useErrorBook } from '../composables/useErrorBook.js'
+
+const { recordWrong, removeQuestion } = useErrorBook()
 
 const props = defineProps({
   /** 题目唯一标识（用于错题本记录） */
@@ -13,7 +16,15 @@ const props = defineProps({
   /** 正确时的提示 */
   correctHint: { type: String, default: '答对了！' },
   /** 错误时的提示 */
-  wrongHint: { type: String, default: '再想想哦~' }
+  wrongHint: { type: String, default: '再想想哦~' },
+  /** 知识层级 */
+  layer: { type: String, default: '' },
+  /** 岗位标签 */
+  role: { type: String, default: 'all' },
+  /** 解析说明 */
+  explanation: { type: String, default: '' },
+  /** 额外标签 */
+  tags: { type: Array, default: () => [] }
 })
 
 const emit = defineEmits(['result'])
@@ -69,6 +80,23 @@ function submit() {
   if (!hasSelection.value) return
   submitted.value = true
   showHint.value = true
+  
+  // 错题本记录
+  if (isCorrect.value) {
+    removeQuestion(props.id)
+  } else {
+    recordWrong({
+      id: props.id,
+      question: props.question,
+      options: props.options,
+      type: props.type,
+      layer: props.layer,
+      role: props.role,
+      explanation: props.explanation,
+      tags: props.tags
+    })
+  }
+  
   emit('result', { id: props.id, correct: isCorrect.value })
 }
 
