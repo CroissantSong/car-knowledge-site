@@ -28,7 +28,7 @@
 
 | # | 📖 学习内容 | ⏱ | ✅ 掌握标准 |
 |---|-----------|-----|------------|
-| ☐ | [整车开发流程 GVDP](/industry/#整车开发流程) | 25 min | 能说出 OTS→PP→SOP 这段制造关注什么——工装/产线/人员/物料 |
+| ☐ | [整车开发流程 GVDP](/industry/terminology#整车开发流程-gvdp) | 25 min | 能说出 OTS→PP→SOP 这段制造关注什么——工装/产线/人员/物料 |
 | ☐ | [研发节点与里程碑](/industry/terminology#典型节点) | 20 min | 能说出 EP/OTS/PP/SOP 每个节点制造要准备什么 |
 | ☐ | [样车阶段](/industry/terminology#样车阶段) | 20 min | 能区分 Mule Car/VP/TT/PP——为什么 TT 暴露的制造问题比 VP 多 |
 

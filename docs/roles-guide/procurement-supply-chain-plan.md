@@ -48,7 +48,7 @@
 
 | # | 📖 学习内容 | ⏱ | ✅ 掌握标准 |
 |---|-----------|-----|------------|
-| ☐ | [整车开发流程 GVDP](/industry/#整车开发流程) | 20 min | 能说出 OTS 到 SOP 之间的时间窗口——这对谈判意味着什么 |
+| ☐ | [整车开发流程 GVDP](/industry/terminology#整车开发流程-gvdp) | 20 min | 能说出 OTS 到 SOP 之间的时间窗口——这对谈判意味着什么 |
 | ☐ | [研发节点与里程碑](/industry/terminology#典型节点) | 20 min | 能说出每个节点供应商要交付什么、延期触发什么后果 |
 | ☐ | [FMEA 失效模式分析](/industry/terminology#fmea-失效模式与影响分析) | 25 min | 能从供应商 DFMEA/PFMEA 的 RPN 值判断方案风险点 |
 

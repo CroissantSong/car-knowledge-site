@@ -28,7 +28,7 @@
 
 | # | 📖 学习内容 | ⏱ | ✅ 掌握标准 |
 |---|-----------|-----|------------|
-| ☐ | [整车开发流程 GVDP](/industry/#整车开发流程) | 25 min | 能从概念到 SOP 说出至少 5 个阶段名称和交付物 |
+| ☐ | [整车开发流程 GVDP](/industry/terminology#整车开发流程-gvdp) | 25 min | 能从概念到 SOP 说出至少 5 个阶段名称和交付物 |
 | ☐ | [V-model 开发流程](/industry/terminology#v-model-开发流程) | 20 min | 能解释"为什么需求没闭环是红灯"——V 型左右对应关系 |
 | ☐ | [研发节点与里程碑](/industry/terminology#典型节点) | 25 min | 能列出 Mule Car / EP / OTS / PPAP / SOP 五个节点各需要谁签字 |
 
