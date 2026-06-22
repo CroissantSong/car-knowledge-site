@@ -131,7 +131,8 @@ const errorByLayer = computed(() => {
   return map
 })
 
-const maxErrorCount = computed(() => Math.max(1, ...Object.values(errorByLayer.value)))
+const maxErrorByLayer = computed(() => Math.max(1, ...Object.values(errorByLayer.value)))
+const maxErrorByRole = computed(() => Math.max(1, ...Object.values(errorByRole.value)))
 
 /* ── 错题分布（按岗位） ── */
 const errorByRole = computed(() => {
@@ -330,7 +331,7 @@ function handleReset() {
               <div class="dash-bar-track">
                 <div
                   class="dash-bar-fill"
-                  :style="{ width: ((errorByLayer[layer.id] || 0) / maxErrorCount * 100) + '%' }"
+                  :style="{ width: ((errorByLayer[layer.id] || 0) / maxErrorByLayer * 100) + '%' }"
                 ></div>
               </div>
               <span class="dash-bar-value">{{ errorByLayer[layer.id] || 0 }}</span>
@@ -351,7 +352,7 @@ function handleReset() {
               <div class="dash-bar-track">
                 <div
                   class="dash-bar-fill accent"
-                  :style="{ width: (count / maxErrorCount * 100) + '%' }"
+                  :style="{ width: (count / maxErrorByRole * 100) + '%' }"
                 ></div>
               </div>
               <span class="dash-bar-value">{{ count }}</span>

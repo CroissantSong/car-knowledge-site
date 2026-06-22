@@ -159,7 +159,8 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
       { text: '六层路径', link: '/#六层学习路径' },
       { text: '核心笔记', link: '/core-notes/' },
       { text: '📊 学习数据', link: '/dashboard' },
-      { text: '关于', link: '/#关于本站' },
+      { text: '关于', link: '/about' },
+      { text: '使用指南', link: '/how-to-use' },
       {
         text: '💬 反馈',
         link: 'https://github.com/CroissantSong/car-knowledge-site/issues'
@@ -259,7 +260,7 @@ ${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
             { text: '采购/供应链路径', link: '/roles-guide/procurement-supply-chain-path' },
             { text: '制造/质量路径', link: '/roles-guide/manufacturing-quality-path' },
             { text: '测试/研发路径', link: '/roles-guide/testing-rd-path' },
-            { text: '---- 学习计划 ----', link: '/roles-guide/pm-plan' },
+            { text: '---- 学习计划 ----' },
             { text: '📋 PM 学习计划', link: '/roles-guide/pm-plan' },
             { text: '🛒 采购学习计划', link: '/roles-guide/procurement-supply-chain-plan' },
             { text: '🏭 制造学习计划', link: '/roles-guide/manufacturing-quality-plan' },

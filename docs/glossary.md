@@ -18,7 +18,7 @@
 | <TermCard term="PMSM">PMSM</TermCard> | Permanent Magnet Synchronous Motor | 永磁同步电机 |
 | <TermCard term="SiC">SiC</TermCard> | Silicon Carbide | 碳化硅，第三代半导体材料 |
 | <TermCard term="OBC">OBC</TermCard> | On-Board Charger | 车载充电机，AC→DC 整流升压 |
-| <TermCard term="DCDC">DC-DC</TermCard> | DC-DC Converter | 高压→12V 转换器 |
+| <TermCard term="DC-DC">DC-DC</TermCard> | DC-DC Converter | 高压→12V 转换器 |
 | <TermCard term="PTC">PTC</TermCard> | Positive Temperature Coefficient | 陶瓷加热器，座舱采暖 |
 | <TermCard term="IGBT">IGBT</TermCard> | Insulated Gate Bipolar Transistor | 绝缘栅双极晶体管，功率半导体 |
 
