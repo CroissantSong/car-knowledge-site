@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import quizBank from '../.vitepress/data/quiz/bank.js'
 
-const questions = computed(() => quizBank.filter(q => q.layer === 'traditional'))
+const questions = computed(() => quizBank.filter(q => q.layer === 'traditional' && q.role === 'all'))
 
 function typeLabel(type) {
   if (type === 'single') return '单选题'

@@ -100,7 +100,7 @@ const quizBank = [
       { text: '功率 = 扭矩 + 转速', correct: false },
       { text: '功率 = 扭矩 × 转速 × 9550', correct: false }
     ],
-    explanation: '$$P(kW) = T(Nm) \\times n(rpm) \\div 9550$$。扭矩决定"能拉多重"，功率决定"能跑多快"。',
+    explanation: '功率 P(kW) = 扭矩 T(N·m) × 转速 n(rpm) ÷ 9550。扭矩决定"能拉多重"，功率决定"能跑多快"。',
     layer: 'mechanics',
     role: 'all',
     tags: ['扭矩', '马力']
@@ -268,7 +268,7 @@ const quizBank = [
       { text: '电机功率翻倍', correct: false },
       { text: '不需要 BMS', correct: false }
     ],
-    explanation: '$$P = V \\times I$$（电压翻倍→功率翻倍），$$P_{热} = I^2R$$（同功率时电流减半→发热 1/4）。',
+    explanation: '功率 P = 电压 V × 电流 I（同电流下，电压翻倍→功率翻倍）；线路发热 P热 = I²R（传输同样功率时，电压翻倍可让电流减半→发热降到 1/4）。',
     layer: 'new-energy',
     role: 'all',
     tags: ['800V', '高压']
